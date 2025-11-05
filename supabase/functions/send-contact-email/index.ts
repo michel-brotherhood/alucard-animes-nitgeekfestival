@@ -80,7 +80,7 @@ const handler = async (req: Request): Promise<Response> => {
           </div>
           <div style="background: #f7fafc; padding: 20px; text-align: center; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
             <p style="margin: 0; color: #718096; font-size: 14px;">
-              📧 Esta é uma mensagem automática do sistema de inscrições Friburgo Geek - Alucard Animes
+              📧 Esta é uma mensagem automática do sistema de inscrições Itanime - Alucard Animes
             </p>
             <p style="margin: 10px 0 0 0; color: #a0aec0; font-size: 12px;">
               Data e Hora: ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
