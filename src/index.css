@@ -17,10 +17,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 270 50% 10%;
 
-    --primary: 354 70% 54%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 70% 35%;
+    --secondary: 142 71% 45%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 270 20% 95%;
@@ -34,18 +34,18 @@ All colors MUST be HSL.
 
     --border: 270 20% 90%;
     --input: 270 20% 90%;
-    --ring: 354 70% 54%;
+    --ring: 142 76% 36%;
 
     --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 270 50% 10%;
-    --sidebar-primary: 354 70% 54%;
+    --sidebar-primary: 142 76% 36%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 270 20% 95%;
     --sidebar-accent-foreground: 270 50% 10%;
     --sidebar-border: 270 20% 90%;
-    --sidebar-ring: 354 70% 54%;
+    --sidebar-ring: 142 76% 36%;
   }
 
   .dark {
@@ -58,10 +58,10 @@ All colors MUST be HSL.
     --popover: 270 50% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 354 70% 54%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 70% 35%;
+    --secondary: 142 71% 45%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 270 30% 15%;
@@ -75,16 +75,16 @@ All colors MUST be HSL.
 
     --border: 270 30% 15%;
     --input: 270 30% 15%;
-    --ring: 354 70% 54%;
+    --ring: 142 76% 36%;
     
     --sidebar-background: 270 50% 8%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 354 70% 54%;
+    --sidebar-primary: 142 76% 36%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 270 30% 15%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 270 30% 15%;
-    --sidebar-ring: 354 70% 54%;
+    --sidebar-ring: 142 76% 36%;
   }
 }
 
@@ -110,14 +110,14 @@ All colors MUST be HSL.
     font-style: italic;
     font-weight: 700;
     text-transform: uppercase;
-    background: linear-gradient(135deg, hsl(250 100% 65%), hsl(280 100% 55%));
+    background: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 71% 45%));
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4), 0 4px 10px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4), 0 4px 10px rgba(34, 197, 94, 0.3);
   }
   
   .btn-skewed:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(139, 92, 246, 0.5), 0 6px 14px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.5), 0 6px 14px rgba(34, 197, 94, 0.4);
   }
   
   .btn-skewed:active {

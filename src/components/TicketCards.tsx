@@ -66,7 +66,7 @@ const TicketCards = () => {
           </h2>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
             Compare os ingressos e encontre a opção perfeita para a aventura que você quer viver no{" "}
-            <span className="font-bold text-primary">Friburgo Geek Natal</span>.
+            <span className="font-bold text-primary">Itanime</span>.
           </p>
           <p className="text-sm text-foreground/60 mt-2">
             Todos os ingressos possuem disponibilidade limitada.
@@ -117,7 +117,7 @@ const TicketCards = () => {
                   }`}
                   asChild
                 >
-                  <a href="https://www.uticket.com.br/event/01LD7EIVF0XD8Q/checkout/tickets" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.uticket.com.br/event/01LD7OB8BD0LUA" target="_blank" rel="noopener noreferrer">
                     QUERO ESTE
                   </a>
                 </Button>
