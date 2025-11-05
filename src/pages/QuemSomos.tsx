@@ -134,8 +134,8 @@ const QuemSomos = () => {
     },
     {
       year: "2018",
-      title: "Evento Friburgo Anime Festival (FAF)",
-      description: "Novo evento da Alucard Animes na cidade serrana de Nova Friburgo no estado do RJ, o evento foi um grande sucesso já na sua primeira edição.",
+      title: "Friburgo Anime Festival (FAF)",
+      description: "Novo evento da Alucard Animes na região serrana do estado do RJ, o evento foi um grande sucesso já na sua primeira edição.",
       image: timeline2018Faf
     },
     {
