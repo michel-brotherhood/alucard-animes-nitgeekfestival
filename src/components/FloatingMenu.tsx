@@ -120,6 +120,7 @@ const FloatingMenu = () => {
               src={itanimeLogo} 
               alt={isOpen ? "Fechar" : "Menu"} 
               className="w-14 h-14 md:w-16 md:h-16 transition-transform duration-300 group-hover:scale-110 object-contain"
+              style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
             />
           </div>
         </button>
