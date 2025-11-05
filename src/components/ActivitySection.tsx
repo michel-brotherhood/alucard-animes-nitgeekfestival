@@ -52,11 +52,12 @@ const ActivitySection = () => {
                   alt={activity.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-primary/40" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-primary rounded-lg">
-                      <activity.icon className="w-6 h-6 text-primary-foreground" />
+                    <div className="p-2 bg-accent/20 backdrop-blur-sm rounded-lg border border-accent/30">
+                      <activity.icon className="w-6 h-6 text-accent" />
                     </div>
                     <h3 className="text-2xl font-bold text-white">{activity.title}</h3>
                   </div>
