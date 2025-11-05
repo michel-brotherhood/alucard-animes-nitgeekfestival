@@ -11,7 +11,6 @@ const schedule = [
   { time: "12:45", event: "Gincanas com o Misheru", location: "STAGE Principal" },
   { time: "13:00", event: "Arena Gamer & Retrô Games", location: "Arena Games" },
   { time: "13:30", event: "Campeonatos de Videogames", location: "Arena Games" },
-  { time: "14:00", event: "Show com o Guitarrista Raphael Freitas", location: "STAGE Principal" },
   { time: "15:00", event: "Concurso de Cosplay", location: "STAGE Principal" },
   { time: "16:00", event: "Campeonato K-POP Generations", location: "STAGE Principal" },
   { time: "16:30", event: "Beat Saber VR", location: "Arena VR" },
