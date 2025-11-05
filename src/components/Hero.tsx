@@ -83,17 +83,6 @@ const Hero = () => {
                   />
                 </div>
                 
-                {/* Featured Badge - Top Right */}
-                <div className="hidden md:block absolute -top-4 -right-4 lg:-right-8 z-10">
-                  <div className="bg-background border-4 border-foreground rounded-2xl p-4 shadow-xl min-w-[180px]">
-                    <p className="text-sm font-black mb-2">#Destaques</p>
-                    <p className="text-xs text-muted-foreground mb-1">Melhores momentos,</p>
-                    <p className="text-xs text-muted-foreground mb-2">novidades e muito mais</p>
-                    <p className="text-xs text-muted-foreground">Próxima atualização:</p>
-                    <p className="text-xs font-bold">13 horas, 03 minutos</p>
-                  </div>
-                </div>
-                
               </div>
             </div>
             
