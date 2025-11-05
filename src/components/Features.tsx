@@ -1,7 +1,14 @@
 import { Check } from "lucide-react";
 
 const features = [
-  "Em breve...",
+  "Acesso a todas as áreas do evento",
+  "Participação em todos os campeonatos",
+  "Acesso a área cosplay com guarda-volumes",
+  "Shows e apresentações ao vivo",
+  "Área de videogames e torneios",
+  "Estandes e lojas com produtos exclusivos",
+  "Atividades interativas e workshops",
+  "Área de alimentação e convivência"
 ];
 
 const Features = () => {
@@ -12,10 +19,11 @@ const Features = () => {
           O QUE TODOS OS INGRESSOS INCLUEM?
         </h2>
 
-        <div className="grid grid-cols-1 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center justify-center gap-3 md:gap-4 bg-white/10 backdrop-blur-sm p-8 md:p-12 rounded-xl">
-              <span className="text-white text-2xl md:text-3xl font-bold">{feature}</span>
+            <div key={index} className="flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border-2 border-accent/20 hover:border-accent/50 transition-all">
+              <Check className="w-6 h-6 md:w-8 md:h-8 text-accent flex-shrink-0" />
+              <span className="text-white text-base md:text-lg font-semibold">{feature}</span>
             </div>
           ))}
         </div>
