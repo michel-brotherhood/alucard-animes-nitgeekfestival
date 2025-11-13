@@ -131,16 +131,63 @@ const JuradoCosplay = () => {
     }
   };
 
+  const calculateScore = (data: FormData): number => {
+    let score = 0;
+
+    // 1. Análise de seguidores (escala de 0-5 pontos)
+    const seguidoresText = data.seguidores_count.replace(/[^0-9]/g, '');
+    const seguidores = parseInt(seguidoresText) || 0;
+    
+    if (seguidores < 5000) return 0; // Desqualificado
+    
+    if (seguidores >= 100000) score += 5;
+    else if (seguidores >= 50000) score += 4;
+    else if (seguidores >= 20000) score += 3.5;
+    else if (seguidores >= 10000) score += 3;
+    else if (seguidores >= 5000) score += 2.5;
+
+    // 2. Vitórias em concursos (2.5 pontos)
+    const concursosLower = data.concursos_ganhos.toLowerCase();
+    const temVitoria = concursosLower.includes('1°') || 
+                       concursosLower.includes('1º') || 
+                       concursosLower.includes('2°') || 
+                       concursosLower.includes('2º') ||
+                       concursosLower.includes('primeiro') ||
+                       concursosLower.includes('segundo') ||
+                       concursosLower.includes('campe');
+    
+    if (!temVitoria) return 0; // Desqualificado
+    score += 2.5;
+
+    // 3. Experiência como júri (2.5 pontos)
+    const eventosLower = data.eventos_juri.toLowerCase();
+    const foiJurado = !eventosLower.includes('nunca') && 
+                      !eventosLower.includes('nenhum') &&
+                      !eventosLower.includes('não') &&
+                      data.eventos_juri.trim().length > 15;
+    
+    if (!foiJurado) return 0; // Desqualificado
+    score += 2.5;
+
+    // 4. Vídeo enviado (bônus de 2 pontos)
+    if (video) {
+      score += 2;
+    }
+
+    return score;
+  };
+
   const onSubmit = async (data: FormData) => {
     if (fotos.length === 0) {
       toast.error("Por favor, envie pelo menos uma foto sua como júri");
       return;
     }
 
-    // Calculate score - 50 points if no video
-    const pontuacao = video ? 100 : 50;
+    // Calculate score based on criteria
+    const pontuacao = calculateScore(data);
     
-    if (pontuacao === 50) {
+    // Minimum score of 9.0 required
+    if (pontuacao < 9.0) {
       setShowDisqualified(true);
       return;
     }
