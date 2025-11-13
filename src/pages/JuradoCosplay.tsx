@@ -16,7 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Trophy, Upload, Loader2, ChevronRight, ChevronLeft } from "lucide-react";
+import { Trophy, Upload, Loader2, ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_VIDEO_SIZE = 50 * 1024 * 1024; // 50MB
@@ -39,6 +39,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const JuradoCosplay = () => {
   const [step, setStep] = useState(1);
+  const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [fotos, setFotos] = useState<File[]>([]);
   const [video, setVideo] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -125,6 +126,7 @@ const JuradoCosplay = () => {
     if (step === 1) {
       const isValid = await validateStep1();
       if (isValid) {
+        setCompletedSteps(prev => [...prev, 1]);
         setStep(2);
       } else {
         toast.error("Por favor, preencha todos os campos obrigatórios antes de continuar");
@@ -315,16 +317,26 @@ const JuradoCosplay = () => {
               {/* Progress Indicator */}
               <div className="mb-6 sm:mb-8">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
-                  <span className={`text-xs sm:text-sm font-semibold ${step >= 1 ? 'text-accent' : 'text-white/50'}`}>
-                    Etapa 1: Informações Básicas
-                  </span>
-                  <span className={`text-xs sm:text-sm font-semibold ${step >= 2 ? 'text-accent' : 'text-white/50'}`}>
-                    Etapa 2: Portfólio
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {completedSteps.includes(1) && (
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent animate-scale-in" />
+                    )}
+                    <span className={`text-xs sm:text-sm font-semibold ${step >= 1 ? 'text-accent' : 'text-white/50'}`}>
+                      Etapa 1: Informações Básicas
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {completedSteps.includes(2) && (
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent animate-scale-in" />
+                    )}
+                    <span className={`text-xs sm:text-sm font-semibold ${step >= 2 ? 'text-accent' : 'text-white/50'}`}>
+                      Etapa 2: Portfólio
+                    </span>
+                  </div>
                 </div>
                 <div className="w-full bg-white/10 rounded-full h-2">
                   <div 
-                    className="bg-accent h-2 rounded-full transition-all duration-300"
+                    className="bg-accent h-2 rounded-full transition-all duration-500 ease-out"
                     style={{ width: `${(step / 2) * 100}%` }}
                   />
                 </div>
@@ -333,7 +345,7 @@ const JuradoCosplay = () => {
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                   {step === 1 && (
-                    <div className="bg-accent/20 p-4 sm:p-6 rounded-lg border border-accent/30 space-y-4">
+                    <div className="bg-accent/20 p-4 sm:p-6 rounded-lg border border-accent/30 space-y-4 animate-fade-in">
                       <h3 className="text-lg sm:text-xl font-bold text-accent mb-4">Informações Básicas</h3>
                       
                       <FormField
@@ -447,7 +459,7 @@ const JuradoCosplay = () => {
                   )}
 
                   {step === 2 && (
-                    <div className="bg-accent/20 p-4 sm:p-6 rounded-lg border border-accent/30 space-y-4 sm:space-y-6">
+                    <div className="bg-accent/20 p-4 sm:p-6 rounded-lg border border-accent/30 space-y-4 sm:space-y-6 animate-fade-in">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg sm:text-xl font-bold text-accent">Fase de Pontuação - Portfólio</h3>
                         <Button
