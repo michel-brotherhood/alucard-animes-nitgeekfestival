@@ -1,7 +1,17 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "https://esm.sh/resend@2.0.0";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const smtpClient = new SMTPClient({
+  connection: {
+    hostname: "smtp.hostinger.com",
+    port: 465,
+    tls: true,
+    auth: {
+      username: "itanime@alucardanimes.com.br",
+      password: Deno.env.get("HOSTINGER_EMAIL_PASSWORD") || "",
+    },
+  },
+});
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -62,11 +72,12 @@ const handler = async (req: Request): Promise<Response> => {
         .join('');
     };
 
-    const sendResult: any = await resend.emails.send({
-      from: "Itanime <onboarding@resend.dev>",
-      to: [to],
-      reply_to: formData.email || undefined,
+    const sendResult = await smtpClient.send({
+      from: "Itanime <itanime@alucardanimes.com.br>",
+      to: to,
+      replyTo: formData.email || undefined,
       subject: subject,
+      content: "auto",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
@@ -90,20 +101,9 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    if (sendResult?.error) {
-      console.error("Erro do Resend:", sendResult.error);
-      return new Response(
-        JSON.stringify({ error: sendResult.error }),
-        {
-          status: 500,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
-      );
-    }
+    console.log("Email enviado com sucesso via SMTP Hostinger");
 
-    console.log("Email enviado com sucesso:", sendResult);
-
-    return new Response(JSON.stringify(sendResult), {
+    return new Response(JSON.stringify({ success: true, message: "Email enviado com sucesso" }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
