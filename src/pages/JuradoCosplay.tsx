@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Trophy, Upload, Loader2, ChevronRight, ChevronLeft } from "lucide-react";
@@ -26,6 +27,7 @@ const formSchema = z.object({
     "Digite seu nome e sobrenome"
   ),
   idade: z.coerce.number().min(18, "Idade mínima: 18 anos").max(100, "Idade inválida"),
+  cidade: z.string().min(1, "Selecione uma cidade"),
   email: z.string().trim().email("E-mail inválido"),
   whatsapp: z.string().trim().min(14, "WhatsApp inválido"),
   concursos_ganhos: z.string().trim().min(10, "Por favor, descreva sua experiência"),
@@ -47,6 +49,7 @@ const JuradoCosplay = () => {
     defaultValues: {
       nome_completo: "",
       idade: 18,
+      cidade: "",
       email: "",
       whatsapp: "",
       concursos_ganhos: "",
@@ -113,7 +116,7 @@ const JuradoCosplay = () => {
   };
 
   const validateStep1 = () => {
-    const fields = ['nome_completo', 'idade', 'email', 'whatsapp'] as const;
+    const fields = ['nome_completo', 'idade', 'cidade', 'email', 'whatsapp'] as const;
     let isValid = true;
     fields.forEach(field => {
       const result = form.trigger(field);
@@ -200,6 +203,7 @@ const JuradoCosplay = () => {
         .insert({
           nome_completo: data.nome_completo,
           idade: data.idade,
+          cidade: data.cidade,
           email: data.email,
           whatsapp: data.whatsapp,
           concursos_ganhos: data.concursos_ganhos,
@@ -334,7 +338,7 @@ const JuradoCosplay = () => {
                         name="nome_completo"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-white">Nome Completo *</FormLabel>
+                            <FormLabel className="text-white">Nome *</FormLabel>
                             <FormControl>
                               <Input {...field} placeholder="" className="bg-white/10 border-white/20 text-white placeholder:text-white/30" />
                             </FormControl>
@@ -343,59 +347,90 @@ const JuradoCosplay = () => {
                         )}
                       />
 
-                      <FormField
-                        control={form.control}
-                        name="idade"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">Idade *</FormLabel>
-                            <FormControl>
-                              <Input type="number" {...field} placeholder="" className="bg-white/10 border-white/20 text-white placeholder:text-white/30" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <FormField
+                          control={form.control}
+                          name="whatsapp"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-white">Telefone *</FormLabel>
+                              <FormControl>
+                                <InputMask
+                                  mask="(99) 99999-9999"
+                                  value={field.value}
+                                  onChange={field.onChange}
+                                >
+                                  {(inputProps: any) => (
+                                    <Input 
+                                      {...inputProps} 
+                                      placeholder="" 
+                                      className="bg-white/10 border-white/20 text-white placeholder:text-white/30" 
+                                    />
+                                  )}
+                                </InputMask>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
 
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">E-mail *</FormLabel>
-                            <FormControl>
-                              <Input type="email" {...field} placeholder="" className="bg-white/10 border-white/20 text-white placeholder:text-white/30" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-white">E-mail *</FormLabel>
+                              <FormControl>
+                                <Input type="email" {...field} placeholder="" className="bg-white/10 border-white/20 text-white placeholder:text-white/30" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
 
-                      <FormField
-                        control={form.control}
-                        name="whatsapp"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">WhatsApp *</FormLabel>
-                            <FormControl>
-                              <InputMask
-                                mask="(99) 99999-9999"
-                                value={field.value}
-                                onChange={field.onChange}
-                              >
-                                {(inputProps: any) => (
-                                  <Input 
-                                    {...inputProps} 
-                                    placeholder="" 
-                                    className="bg-white/10 border-white/20 text-white placeholder:text-white/30" 
-                                  />
-                                )}
-                              </InputMask>
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <FormField
+                          control={form.control}
+                          name="idade"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-white">Idade *</FormLabel>
+                              <FormControl>
+                                <Input type="number" {...field} placeholder="" className="bg-white/10 border-white/20 text-white placeholder:text-white/30" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="cidade"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-white">Cidade *</FormLabel>
+                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                  <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                                    <SelectValue placeholder="Selecione" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent className="bg-primary border-accent/30 z-50">
+                                  <SelectItem value="Niterói" className="text-white hover:bg-accent/20">Niterói</SelectItem>
+                                  <SelectItem value="São Gonçalo" className="text-white hover:bg-accent/20">São Gonçalo</SelectItem>
+                                  <SelectItem value="Itaboraí" className="text-white hover:bg-accent/20">Itaboraí</SelectItem>
+                                  <SelectItem value="Maricá" className="text-white hover:bg-accent/20">Maricá</SelectItem>
+                                  <SelectItem value="Rio de Janeiro" className="text-white hover:bg-accent/20">Rio de Janeiro</SelectItem>
+                                  <SelectItem value="Nova Friburgo" className="text-white hover:bg-accent/20">Nova Friburgo</SelectItem>
+                                  <SelectItem value="São Paulo" className="text-white hover:bg-accent/20">São Paulo</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
 
                       <Button
                         type="button"
