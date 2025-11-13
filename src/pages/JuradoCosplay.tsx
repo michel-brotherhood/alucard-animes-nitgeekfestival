@@ -17,7 +17,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Trophy, Upload, Loader2, ChevronRight, ChevronLeft, CheckCircle2, Instagram } from "lucide-react";
+import { Trophy, Upload, Loader2, ChevronRight, ChevronLeft, CheckCircle2, Instagram, PartyPopper, Frown } from "lucide-react";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_VIDEO_SIZE = 50 * 1024 * 1024; // 50MB
@@ -47,6 +47,8 @@ const JuradoCosplay = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showDisqualified, setShowDisqualified] = useState(false);
   const [finalScore, setFinalScore] = useState<number | null>(null);
+  const [emailSuggestion, setEmailSuggestion] = useState<string>("");
+  const [showEmailSuggestion, setShowEmailSuggestion] = useState(false);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -61,6 +63,39 @@ const JuradoCosplay = () => {
       seguidores_count: "",
     },
   });
+
+  const validateEmail = (email: string) => {
+    const commonDomains = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'icloud.com'];
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+      setShowEmailSuggestion(false);
+      return;
+    }
+
+    const domain = email.split('@')[1]?.toLowerCase();
+    
+    // Common typos
+    const typoMap: Record<string, string> = {
+      'gmial.com': 'gmail.com',
+      'gmal.com': 'gmail.com',
+      'gmil.com': 'gmail.com',
+      'gmaill.com': 'gmail.com',
+      'hotmial.com': 'hotmail.com',
+      'hotmal.com': 'hotmail.com',
+      'outlok.com': 'outlook.com',
+      'yahooo.com': 'yahoo.com',
+      'yaho.com': 'yahoo.com',
+    };
+
+    if (domain && typoMap[domain]) {
+      const suggestion = email.split('@')[0] + '@' + typoMap[domain];
+      setEmailSuggestion(suggestion);
+      setShowEmailSuggestion(true);
+    } else {
+      setShowEmailSuggestion(false);
+    }
+  };
 
   const handleFotosChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
@@ -268,7 +303,11 @@ const JuradoCosplay = () => {
           <div className="max-w-2xl mx-auto text-center">
             <Card className="bg-white/10 backdrop-blur-sm border-2 border-accent/30">
               <CardContent className="p-12">
-                <Trophy className={`w-20 h-20 mx-auto mb-6 ${finalScore && finalScore >= 9.0 ? 'text-accent' : 'text-accent opacity-50'}`} />
+                {finalScore !== null && finalScore < 9.0 ? (
+                  <Frown className="w-20 h-20 mx-auto mb-6 text-white/50" />
+                ) : (
+                  <PartyPopper className="w-20 h-20 mx-auto mb-6 text-accent" />
+                )}
                 <h2 className="text-3xl font-black text-white mb-4">
                   {finalScore && finalScore >= 9.0 
                     ? "Parabéns, sua nota foi Excelente!" 
@@ -276,7 +315,7 @@ const JuradoCosplay = () => {
                 </h2>
                 <p className="text-white/80 text-lg mb-6">
                   {finalScore && finalScore >= 9.0
-                    ? "Nossa equipe entrará em contato no whatsapp que você encaminhou, não deixe de seguir nosso instagram"
+                    ? "Estaremos entrando em contato com os candidatos com as maiores notas, boa sorte."
                     : "Obrigado por seu interesse, mas sua pontuação não foi o suficiente para se qualificar para a vaga. Mais sorte na próxima vez!"}
                 </p>
                 {finalScore && finalScore >= 9.0 && (
@@ -422,7 +461,33 @@ const JuradoCosplay = () => {
                             <FormItem>
                               <FormLabel className="text-white text-sm sm:text-base">E-mail *</FormLabel>
                               <FormControl>
-                                <Input type="email" {...field} placeholder="" className="bg-white/10 border-white/20 text-white placeholder:text-white/30 h-11 sm:h-12 text-sm sm:text-base" />
+                                <div className="space-y-2">
+                                  <Input 
+                                    type="email" 
+                                    {...field} 
+                                    placeholder="" 
+                                    className="bg-white/10 border-white/20 text-white placeholder:text-white/30 h-11 sm:h-12 text-sm sm:text-base"
+                                    onChange={(e) => {
+                                      field.onChange(e);
+                                      validateEmail(e.target.value);
+                                    }}
+                                  />
+                                  {showEmailSuggestion && (
+                                    <div className="text-sm text-white/80 bg-white/10 p-2 rounded-md border border-accent/30">
+                                      Você quis dizer: 
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          form.setValue('email', emailSuggestion);
+                                          setShowEmailSuggestion(false);
+                                        }}
+                                        className="ml-2 text-accent hover:underline font-medium"
+                                      >
+                                        {emailSuggestion}
+                                      </button>
+                                    </div>
+                                  )}
+                                </div>
                               </FormControl>
                               <FormMessage className="text-xs sm:text-sm" />
                             </FormItem>
