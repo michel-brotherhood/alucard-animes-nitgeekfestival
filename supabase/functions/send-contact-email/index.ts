@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
+import { Resend } from "https://esm.sh/resend@2.0.0";
 
 const smtpClient = new SMTPClient({
   connection: {
@@ -12,6 +13,8 @@ const smtpClient = new SMTPClient({
     },
   },
 });
+
+const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -72,13 +75,9 @@ const handler = async (req: Request): Promise<Response> => {
         .join('');
     };
 
-    const sendResult = await smtpClient.send({
-      from: "Itanime <itanime@alucardanimes.com.br>",
-      to: to,
-      replyTo: formData.email || undefined,
-      subject: subject,
-      content: "auto",
-      html: `
+    const hostingerPassword = Deno.env.get("HOSTINGER_EMAIL_PASSWORD") || "";
+
+    const htmlContent = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
             <h1 style="color: white; margin: 0; font-size: 28px;">Nova Inscrição Recebida</h1>
@@ -97,13 +96,58 @@ const handler = async (req: Request): Promise<Response> => {
               Data e Hora: ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
             </p>
           </div>
-        </div>
-      `,
-    });
+        </div>`;
 
-    console.log("Email enviado com sucesso via SMTP Hostinger");
+    let sentProvider = "";
 
-    return new Response(JSON.stringify({ success: true, message: "Email enviado com sucesso" }), {
+    // 1) Tenta Hostinger SMTP se a senha existir
+    if (hostingerPassword) {
+      try {
+        await smtpClient.send({
+          from: "Itanime <itanime@alucardanimes.com.br>",
+          to: to,
+          replyTo: formData.email || undefined,
+          subject: subject,
+          content: "auto",
+          html: htmlContent,
+        });
+        sentProvider = "smtp";
+        console.log("Email enviado com sucesso via SMTP Hostinger");
+      } catch (smtpError) {
+        console.error("Falha no SMTP Hostinger, tentando Resend...", smtpError);
+      }
+    }
+
+    // 2) Fallback para Resend se SMTP não foi usado com sucesso
+    if (!sentProvider) {
+      const apiKey = Deno.env.get("RESEND_API_KEY");
+      if (!apiKey) {
+        throw new Error("Nenhum provedor de email configurado (HOSTINGER_EMAIL_PASSWORD ou RESEND_API_KEY)");
+      }
+      const resendResult: any = await resend.emails.send({
+        from: "Itanime <onboarding@resend.dev>",
+        to: [to],
+        reply_to: formData.email || undefined,
+        subject: subject,
+        html: htmlContent,
+      });
+
+      if (resendResult?.error) {
+        console.error("Erro do Resend:", resendResult.error);
+        return new Response(
+          JSON.stringify({ error: resendResult.error }),
+          {
+            status: 500,
+            headers: { "Content-Type": "application/json", ...corsHeaders },
+          }
+        );
+      }
+
+      sentProvider = "resend";
+      console.log("Email enviado com sucesso via Resend");
+    }
+
+    return new Response(JSON.stringify({ success: true, message: "Email enviado com sucesso", provider: sentProvider }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
