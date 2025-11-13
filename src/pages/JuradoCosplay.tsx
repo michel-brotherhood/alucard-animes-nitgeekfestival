@@ -473,7 +473,12 @@ const JuradoCosplay = () => {
                               1. Quantos concursos você já ganhou a nível nacional (1º ou 2º lugar)? Em quais eventos? *
                             </FormLabel>
                             <FormControl>
-                              <Textarea {...field} rows={3} className="bg-white/10 border-white/20 text-white" />
+                              <Textarea 
+                                {...field} 
+                                rows={3} 
+                                placeholder="Ex: Brasil Game Show - 2º Lugar ( Tradicional ) e Anime Friends - 1º Lugar ( Desfile )"
+                                className="bg-white/10 border-white/20 text-white placeholder:text-white/40" 
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -489,7 +494,12 @@ const JuradoCosplay = () => {
                               2. Quais eventos você já trabalhou antes como Júri a nível Nacional? *
                             </FormLabel>
                             <FormControl>
-                              <Textarea {...field} rows={3} className="bg-white/10 border-white/20 text-white" />
+                              <Textarea 
+                                {...field} 
+                                rows={3} 
+                                placeholder="Ex: BGS, Anime Friends, Sana, Itanime, Anime Nikity, Nitgeek Festival..."
+                                className="bg-white/10 border-white/20 text-white placeholder:text-white/40" 
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
