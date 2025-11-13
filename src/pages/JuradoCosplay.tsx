@@ -44,6 +44,8 @@ const JuradoCosplay = () => {
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [fotos, setFotos] = useState<File[]>([]);
   const [video, setVideo] = useState<File | null>(null);
+  const [fotoPreviews, setFotoPreviews] = useState<string[]>([]);
+  const [videoPreview, setVideoPreview] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showDisqualified, setShowDisqualified] = useState(false);
   const [finalScore, setFinalScore] = useState<number | null>(null);
@@ -99,26 +101,70 @@ const JuradoCosplay = () => {
 
   const handleFotosChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
+    
     const validFiles = files.filter(file => {
       if (file.size > MAX_FILE_SIZE) {
-        toast.error(`${file.name} é muito grande. Máximo: 10MB`);
+        toast.error(`Arquivo ${file.name} excede o tamanho máximo de 10MB`);
         return false;
       }
       return true;
     });
-    setFotos(validFiles);
+
+    if (validFiles.length + fotos.length > 5) {
+      toast.error("Você pode enviar no máximo 5 fotos");
+      return;
+    }
+
+    const newFotos = [...fotos, ...validFiles];
+    setFotos(newFotos);
+    
+    // Create previews
+    const newPreviews = validFiles.map(file => URL.createObjectURL(file));
+    setFotoPreviews([...fotoPreviews, ...newPreviews]);
+  };
+
+  const handleRemoveFoto = (index: number) => {
+    const newFotos = fotos.filter((_, i) => i !== index);
+    const newPreviews = fotoPreviews.filter((_, i) => i !== index);
+    
+    // Revoke the URL to free memory
+    URL.revokeObjectURL(fotoPreviews[index]);
+    
+    setFotos(newFotos);
+    setFotoPreviews(newPreviews);
   };
 
   const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
+    
     if (file) {
       if (file.size > MAX_VIDEO_SIZE) {
-        toast.error("Vídeo muito grande. Máximo: 50MB");
+        toast.error("O vídeo não pode exceder 50MB");
         return;
       }
       setVideo(file);
+      
+      // Create video preview
+      const preview = URL.createObjectURL(file);
+      setVideoPreview(preview);
     }
   };
+
+  const handleRemoveVideo = () => {
+    if (videoPreview) {
+      URL.revokeObjectURL(videoPreview);
+    }
+    setVideo(null);
+    setVideoPreview("");
+  };
+
+  // Cleanup previews on unmount
+  useEffect(() => {
+    return () => {
+      fotoPreviews.forEach(preview => URL.revokeObjectURL(preview));
+      if (videoPreview) URL.revokeObjectURL(videoPreview);
+    };
+  }, []);
 
   const uploadFiles = async (applicationId: string) => {
     const fotoUrls: string[] = [];
@@ -626,6 +672,28 @@ const JuradoCosplay = () => {
                         {fotos.length > 0 && (
                           <p className="text-accent text-xs sm:text-sm mt-2">{fotos.length} foto(s) selecionada(s)</p>
                         )}
+                        {fotoPreviews.length > 0 && (
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3">
+                            {fotoPreviews.map((preview, index) => (
+                              <div key={index} className="relative group">
+                                <img 
+                                  src={preview} 
+                                  alt={`Preview ${index + 1}`}
+                                  className="w-full h-32 object-cover rounded-lg border-2 border-accent/30"
+                                />
+                                <button
+                                  type="button"
+                                  onClick={() => handleRemoveFoto(index)}
+                                  className="absolute top-1 right-1 bg-destructive text-destructive-foreground rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+                                >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                                  </svg>
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                         <p className="text-white/60 text-xs mt-1">Máximo: 10MB por foto</p>
                       </div>
 
@@ -660,6 +728,24 @@ const JuradoCosplay = () => {
                         </div>
                         {video && (
                           <p className="text-accent text-xs sm:text-sm mt-2">Vídeo selecionado: {video.name}</p>
+                        )}
+                        {videoPreview && (
+                          <div className="relative group mt-3">
+                            <video 
+                              src={videoPreview} 
+                              controls
+                              className="w-full max-h-64 rounded-lg border-2 border-accent/30"
+                            />
+                            <button
+                              type="button"
+                              onClick={handleRemoveVideo}
+                              className="absolute top-2 right-2 bg-destructive text-destructive-foreground rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                              </svg>
+                            </button>
+                          </div>
                         )}
                         <p className="text-white/60 text-xs mt-1">Máximo: 50MB</p>
                       </div>
