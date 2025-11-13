@@ -62,9 +62,9 @@ const handler = async (req: Request): Promise<Response> => {
         .join('');
     };
 
-    const emailResponse = await resend.emails.send({
+    const sendResult: any = await resend.emails.send({
       from: "Contato <no-reply@alucardanimes.com.br>",
-      to: ["itanime@alucardanimes.com.br"],
+      to: [to],
       reply_to: formData.email || undefined,
       subject: subject,
       html: `
@@ -90,9 +90,20 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Email enviado com sucesso:", emailResponse);
+    if (sendResult?.error) {
+      console.error("Erro do Resend:", sendResult.error);
+      return new Response(
+        JSON.stringify({ error: sendResult.error }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
 
-    return new Response(JSON.stringify(emailResponse), {
+    console.log("Email enviado com sucesso:", sendResult);
+
+    return new Response(JSON.stringify(sendResult), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
