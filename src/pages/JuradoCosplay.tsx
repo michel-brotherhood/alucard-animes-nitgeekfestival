@@ -510,13 +510,13 @@ const JuradoCosplay = () => {
                         <Label className="text-white mb-2 block">
                           3. Envie fotos suas como Júri em um dos eventos citados acima *
                         </Label>
-                        <div className="relative min-h-[48px]">
+                        <div className="relative min-h-[56px]">
                           <Input
                             type="file"
                             accept="image/*"
                             multiple
                             onChange={handleFotosChange}
-                            className="bg-white/10 border-white/20 text-white file:mr-2 file:py-2 file:px-3 file:rounded-full file:border-0 file:text-xs sm:file:text-sm file:font-semibold file:bg-accent file:text-primary hover:file:bg-accent/90 text-xs sm:text-sm pr-10 py-3"
+                            className="bg-white/10 border-white/20 text-white h-14 sm:h-16 file:mr-3 file:h-10 sm:file:h-11 file:px-4 file:rounded-full file:border-0 file:text-xs sm:file:text-sm file:font-semibold file:bg-accent file:text-primary hover:file:bg-accent/90 text-xs sm:text-sm pr-12"
                           />
                           <Upload className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/50 pointer-events-none" />
                         </div>
@@ -546,12 +546,12 @@ const JuradoCosplay = () => {
                         <Label className="text-white mb-2 block">
                           5. Envie algum vídeo seu explicando o por que você se difere dos demais candidatos
                         </Label>
-                        <div className="relative min-h-[48px]">
+                        <div className="relative min-h-[56px]">
                           <Input
                             type="file"
                             accept="video/*"
                             onChange={handleVideoChange}
-                            className="bg-white/10 border-white/20 text-white file:mr-2 file:py-2 file:px-3 file:rounded-full file:border-0 file:text-xs sm:file:text-sm file:font-semibold file:bg-accent file:text-primary hover:file:bg-accent/90 text-xs sm:text-sm pr-10 py-3"
+                            className="bg-white/10 border-white/20 text-white h-14 sm:h-16 file:mr-3 file:h-10 sm:file:h-11 file:px-4 file:rounded-full file:border-0 file:text-xs sm:file:text-sm file:font-semibold file:bg-accent file:text-primary hover:file:bg-accent/90 text-xs sm:text-sm pr-12"
                           />
                           <Upload className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/50 pointer-events-none" />
                         </div>
