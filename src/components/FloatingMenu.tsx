@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MessageSquare, Sparkles, TicketCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-import itanimeLogo from "@/assets/itanime-logo.svg";
+import nitgeekLogo from "@/assets/nitgeek-logo.webp";
 
 const FloatingMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ const FloatingMenu = () => {
       icon: MessageSquare,
       label: "WhatsApp",
       color: "bg-gradient-to-br from-green-400 to-green-600",
-      href: "https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+Itanime&type=phone_number",
+      href: "https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+NitGeek+Festival&type=phone_number",
       external: true,
     },
     {
@@ -117,7 +117,7 @@ const FloatingMenu = () => {
         >
           <div className="relative flex items-center justify-center w-full h-full">
             <img 
-              src={itanimeLogo} 
+              src={nitgeekLogo} 
               alt={isOpen ? "Fechar" : "Menu"} 
               className="w-14 h-14 md:w-16 md:h-16 transition-transform duration-300 group-hover:scale-110 object-contain"
               style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}

@@ -51,7 +51,7 @@ const ConcursoKpop = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'itanime@alucardanimes.com.br',
+          to: 'nitgeek@alucardanimes.com.br',
           subject: 'Nova Inscrição - Campeonato K-Pop',
           formData: values,
           formType: 'Campeonato K-Pop'
@@ -157,7 +157,7 @@ const ConcursoKpop = () => {
                   <li><strong>1.13</strong> – As vagas são limitadas. A inscrição é gratuita, mas garante a entrada de até 5 participantes ao evento. Participantes adicionais devem adquirir seus ingressos normalmente</li>
                   <li><strong>1.14</strong> – A inscrição inclui a entrada no evento para até 5 integrantes</li>
                   <li><strong>1.15</strong> – Em caso de desistência, não há reembolso</li>
-                  <li><strong>1.16</strong> – O Campeonato será realizado no dia 07 DE DEZEMBRO DE 2025, NO ROTARY CLUB DE ITABORAÍ, CENTRO DE ITABORAÍ a partir das 14 horas</li>
+                  <li><strong>1.16</strong> – O Campeonato será realizado no dia 18 DE JANEIRO DE 2026, NO CLUBE CANTO DO RIO, CENTRO DE NITERÓI a partir das 14 horas</li>
                 </ul>
               </div>
 
@@ -439,7 +439,7 @@ const ConcursoKpop = () => {
                     <p className="text-white/90 text-sm md:text-base">
                       Dúvidas? {" "}
                       <a 
-                        href="mailto:itanime@alucardanimes.com.br?subject=Dúvida%20-%20Campeonato%20K-Pop"
+                        href="mailto:nitgeek@alucardanimes.com.br?subject=Dúvida%20-%20Campeonato%20K-Pop"
                         className="text-accent hover:text-accent/80 underline font-semibold transition-colors"
                       >
                         Fale com a equipe Alucard

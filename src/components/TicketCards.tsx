@@ -66,7 +66,7 @@ const TicketCards = () => {
           </h2>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
             Compare os ingressos e encontre a opção perfeita para a aventura que você quer viver no{" "}
-            <span className="font-bold text-primary">Itanime</span>.
+            <span className="font-bold text-primary">NitGeek Festival</span>.
           </p>
           <p className="text-sm text-foreground/60 mt-2">
             Todos os ingressos possuem disponibilidade limitada.

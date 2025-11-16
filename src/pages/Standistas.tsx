@@ -45,7 +45,7 @@ const Standistas = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'itanime@alucardanimes.com.br',
+          to: 'nitgeek@alucardanimes.com.br',
           subject: 'Nova Solicitação - Estande de Vendas',
           formData: values,
           formType: 'Solicitação de Estande'
@@ -272,7 +272,7 @@ const Standistas = () => {
                     <p className="text-white/90 text-sm md:text-base">
                       Dúvidas? {" "}
                       <a 
-                        href="mailto:itanime@alucardanimes.com.br?subject=Dúvida%20-%20Estande%20de%20Vendas"
+                        href="mailto:nitgeek@alucardanimes.com.br?subject=Dúvida%20-%20Estande%20de%20Vendas"
                         className="text-accent hover:text-accent/80 underline font-semibold transition-colors"
                       >
                         Fale com a equipe Alucard

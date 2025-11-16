@@ -14,7 +14,7 @@ const Hero = () => {
             <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
               <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.3] tracking-tight max-w-lg">
                 A maior experiência <br className="md:hidden" />
-                <span className="text-accent">geek</span> de Itaboraí
+                <span className="text-accent">geek</span> de Niterói
               </h1>
               
               <div className="h-1 w-20 md:w-32 bg-foreground"></div>

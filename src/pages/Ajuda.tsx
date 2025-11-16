@@ -36,9 +36,9 @@ const Ajuda = () => {
               <div className="bg-card p-6 rounded-xl border-2 border-border shadow-lg">
                 <h3 className="font-bold text-xl text-foreground mb-3">📍 Localização</h3>
                 <p className="text-foreground/80">
-                  Rotary Club de Itaboraí<br />
-                  R. Des. Ferreira Pinto, 226<br />
-                  Centro, Itaboraí - RJ
+                  Clube Canto do Rio<br />
+                  Av Visconde do Rio Branco, 701<br />
+                  Centro, Niterói - RJ, 24020-005
                 </p>
               </div>
 
@@ -212,7 +212,7 @@ const Ajuda = () => {
                   💬 Ainda tem dúvidas? Fale com a gente!
                 </p>
                 <a 
-                  href="https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+Itanime&type=phone_number"
+                  href="https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+NitGeek+Festival&type=phone_number"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-lg transition-colors"
@@ -221,7 +221,7 @@ const Ajuda = () => {
                   Falar no WhatsApp - (21) 97749-8015
                 </a>
                 <p className="text-sm text-foreground/60 mt-3">
-                  Ou envie um e-mail: <a href="mailto:itanime@alucardanimes.com.br" className="text-primary hover:underline">itanime@alucardanimes.com.br</a>
+                  Ou envie um e-mail: <a href="mailto:nitgeek@alucardanimes.com.br" className="text-primary hover:underline">nitgeek@alucardanimes.com.br</a>
                 </p>
               </div>
             </div>

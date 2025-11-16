@@ -53,7 +53,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/eventoitanime/" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
                 <Facebook className="w-5 h-5 text-white" />
               </a>
-              <a href="https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+Itanime&type=phone_number" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
+              <a href="https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+NitGeek+Festival&type=phone_number" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
                 <MessageCircle className="w-5 h-5 text-white" />
               </a>
             </div>
