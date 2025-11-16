@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MessageSquare, Sparkles, TicketCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-import nitgeekLogo from "@/assets/nitgeek-logo.webp";
+import nitgeekLogo from "@/assets/logov2.webp";
 
 const FloatingMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

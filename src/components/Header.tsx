@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import nitgeekLogo from "@/assets/nitgeek-logo.webp";
+import nitgeekLogo from "@/assets/logov2.webp";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full bg-background">
+    <header className="w-full bg-transparent">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-4">
         <nav className="bg-primary rounded-full py-2 md:py-3 px-4 md:px-8 flex items-center justify-between shadow-lg">
           <div className="flex items-center gap-4 md:gap-12">
