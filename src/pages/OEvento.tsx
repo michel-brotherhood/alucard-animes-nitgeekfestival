@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
 import FAQ from "@/components/FAQ";
 import MapSection from "@/components/MapSection";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Calendar, MapPin, Star, Instagram, Facebook } from "lucide-react";
 import itanimeLogo from "@/assets/itanime-logo.svg";
@@ -30,7 +30,7 @@ const stats = [
 const OEvento = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
       
       <section className="bg-gradient-to-b from-secondary to-primary py-16 px-6">
@@ -51,23 +51,12 @@ const OEvento = () => {
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 mb-12 border-2 border-accent">
             <div className="space-y-4 text-white/90 text-lg">
               <p>
-                Desde 2017, o NitGeek Festival tem sido o epicentro da cultura geek em Niterói. Com uma trajetória de sucesso, já recebemos grandes nomes e atrações que marcaram a história dos eventos geek no estado do Rio de Janeiro.
-              </p>
-              <p>
-                Referência em qualidade e diversão, o NitGeek Festival move a cena geek/otaku de Niterói e região.
+                Nascido no ano de 2017, o evento teve sua primeira edição em Niterói, onde atraiu a comunidade geek da cidade de Niterói, o evento retorna em 2023, trazendo muita cultura geek e novas atividades e atrações para os moradores de Niterói e cidades vizinhas.
               </p>
               <div className="mt-8">
-                <h3 className="text-2xl font-black text-accent mb-4">Missão</h3>
-                <ul className="space-y-2 list-disc list-inside">
-                  <li>Promover cultura geek/anime com qualidade e segurança.</li>
-                  <li>Garantir acessibilidade e ambiente familiar.</li>
-                  <li>Combater assédio e discriminação.</li>
-                  <li>Incentivar talentos e negócios locais.</li>
-                  <li>Oferecer conteúdo que diverte e ensina (workshops, painéis, shows).</li>
-                  <li>Aproximar fãs, criadores e marcas para fazer a cena crescer.</li>
-                </ul>
-                <p className="mt-4 font-semibold">
-                  Levar o melhor da cultura geek e dos animes para Niterói e região — com eventos de qualidade, seguros e em um ambiente familiar e acolhedor.
+                <h3 className="text-2xl font-black text-accent mb-4">Missão do NitGeek Festival</h3>
+                <p className="font-semibold">
+                  Levar o melhor da cultura Geek/Games para a população de Niterói e cidades vizinhas, com eventos de qualidade, seguros em um ambiente familiar e sadio.
                 </p>
               </div>
             </div>
@@ -182,7 +171,7 @@ const OEvento = () => {
               Garanta seu ingresso agora e faça parte dessa experiência inesquecível!
             </p>
             <a 
-              href="https://www.uticket.com.br/event/01LD7OB8BD0LUA"
+              href="https://www.uticket.com.br/event/01LEBL5A2365D3"
               target="_blank"
               rel="noopener noreferrer" 
               className="inline-block bg-primary hover:bg-primary/90 text-white font-black text-xl px-12 py-4 rounded-full shadow-lg transition-all hover:scale-105"

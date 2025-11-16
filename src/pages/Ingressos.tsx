@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
 import FAQ from "@/components/FAQ";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ShoppingCart } from "lucide-react";
@@ -12,7 +12,7 @@ const Ingressos = () => {
   const tickets = [
     {
       name: "INGRESSO ÚNICO",
-      price: "35,00",
+      price: "30,00",
       badge: "promocional",
       badgeColor: "bg-accent text-primary",
       features: [
@@ -23,7 +23,7 @@ const Ingressos = () => {
     },
     {
       name: "INGRESSO DUPLO",
-      price: "60,00",
+      price: "50,00",
       badge: "promocional",
       badgeColor: "bg-accent text-primary",
       features: [
@@ -36,7 +36,7 @@ const Ingressos = () => {
     },
     {
       name: "INGRESSO TRIPLO",
-      price: "85,00",
+      price: "70,00",
       badge: "promocional",
       badgeColor: "bg-accent text-primary",
       features: [
@@ -49,13 +49,13 @@ const Ingressos = () => {
     },
     {
       name: "VIP",
-      price: "130,00",
+      price: "150,00",
       badge: "promocional",
       badgeColor: "bg-destructive text-white",
       features: [
         "Entrada antecipada ao evento",
         "Crachá exclusivo VIP",
-        "R$ 130,00 em compras no estande Yume Geek Store ou na Lanchonete Konoha Lanches",
+        "R$ 150,00 em compras no estande Yume Geek Store ou na Lanchonete Konoha Lanches",
       ],
       note: "Experiência completa e diferenciada!",
       isVip: true,
@@ -64,7 +64,7 @@ const Ingressos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
       
       <main className="container mx-auto px-4 py-12">
@@ -73,7 +73,7 @@ const Ingressos = () => {
             COMO VAI SER A SUA AVENTURA?
           </h1>
           <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
-            Compare os ingressos e encontre a opção perfeita para a aventura que você quer viver no <span className="font-bold text-primary">Itanime</span>.
+            Compare os ingressos e encontre a opção perfeita para a aventura que você quer viver no <span className="font-bold text-primary">NitGeek Festival</span>.
             <br className="hidden sm:block" />
             <span className="block sm:inline mt-2 sm:mt-0">Todos os ingressos possuem disponibilidade limitada.</span>
           </p>
@@ -123,7 +123,7 @@ const Ingressos = () => {
                   }`}
                   asChild
                 >
-                  <a href="https://www.uticket.com.br/event/01LD7OB8BD0LUA" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer">
                     QUERO ESTE
                   </a>
                 </Button>

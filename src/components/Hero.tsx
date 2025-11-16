@@ -30,7 +30,7 @@ const Hero = () => {
                   className="text-sm md:text-base px-6 md:px-10 py-5 md:py-6 rounded-2xl"
                   asChild
                 >
-                  <a href="https://www.uticket.com.br/event/01LD7OB8BD0LUA" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
+                  <a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
                 </Button>
                 <Button 
                   variant="outline" 

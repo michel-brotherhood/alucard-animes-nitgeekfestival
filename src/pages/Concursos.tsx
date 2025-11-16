@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
 import FAQ from "@/components/FAQ";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, Music, Mic, Gamepad2 } from "lucide-react";
@@ -46,7 +46,7 @@ const concursos = [
 const Concursos = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
       
       <section className="bg-gradient-to-b from-secondary via-primary to-secondary py-16 px-6">

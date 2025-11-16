@@ -25,7 +25,7 @@ const FloatingMenu = () => {
       icon: TicketCheck,
       label: "Ingressos",
       color: "bg-gradient-to-br from-pink-400 to-pink-600",
-      href: "https://www.uticket.com.br/event/01LD7OB8BD0LUA",
+      href: "https://www.uticket.com.br/event/01LEBL5A2365D3",
       external: true,
     },
   ];

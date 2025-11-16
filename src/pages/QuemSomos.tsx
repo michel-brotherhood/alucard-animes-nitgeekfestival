@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 import alucardLogo from "@/assets/alucard-animes-logo.png";
 import { Button } from "@/components/ui/button";
 import { Instagram, Facebook } from "lucide-react";
@@ -160,7 +160,7 @@ const QuemSomos = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary via-secondary to-primary">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
       
       {/* Hero Section */}
