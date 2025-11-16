@@ -33,7 +33,7 @@ const faqs = [
       <>
         Online pelo site da Uticket e PIX via lista amiga.{" "}
         <a 
-          href="https://www.uticket.com.br/event/01LD7OB8BD0LUA" 
+          href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
           target="_blank"
           rel="noopener noreferrer"
           className="font-bold text-primary hover:text-secondary underline transition-colors"

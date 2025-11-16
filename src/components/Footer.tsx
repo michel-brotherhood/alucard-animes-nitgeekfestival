@@ -20,7 +20,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/o-evento" className="text-white/80 hover:text-accent transition-colors">O Evento</Link></li>
               <li><Link to="/line-up" className="text-white/80 hover:text-accent transition-colors">Line-up</Link></li>
-              <li><a href="https://www.uticket.com.br/event/01LD7OB8BD0LUA" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-accent transition-colors">Ingressos</a></li>
+              <li><a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-accent transition-colors">Ingressos</a></li>
               <li><Link to="/ajuda" className="text-white/80 hover:text-accent transition-colors">Ajuda</Link></li>
               <li><Link to="/politica-privacidade" className="text-white/80 hover:text-accent transition-colors">Política de Privacidade</Link></li>
             </ul>

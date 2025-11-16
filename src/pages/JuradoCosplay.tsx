@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -343,7 +343,7 @@ const JuradoCosplay = () => {
   if (showDisqualified) {
     return (
       <div className="min-h-screen overflow-x-hidden">
-        <SnowEffect />
+      <SpaceEffect />
         <Header />
         <section className="bg-gradient-to-b from-secondary via-primary to-secondary py-16 px-6 min-h-[80vh] flex items-center justify-center">
           <div className="max-w-2xl mx-auto text-center">
@@ -385,7 +385,7 @@ const JuradoCosplay = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
 
       <section className="bg-gradient-to-b from-secondary via-primary to-secondary py-8 sm:py-12 md:py-16 px-4 sm:px-6">

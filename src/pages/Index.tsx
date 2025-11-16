@@ -15,12 +15,12 @@ import AlucardSection from "@/components/AlucardSection";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 
 const Index = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
       <Hero />
       <EventInfo />

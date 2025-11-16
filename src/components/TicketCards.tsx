@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const tickets = [
   {
     name: "INGRESSO ÚNICO",
-    price: "35,00",
+    price: "30,00",
     badge: "promocional",
     badgeColor: "bg-accent text-primary",
     features: [
@@ -17,7 +17,7 @@ const tickets = [
   },
   {
     name: "INGRESSO DUPLO",
-    price: "60,00",
+    price: "50,00",
     badge: "promocional",
     badgeColor: "bg-accent text-primary",
     features: [
@@ -30,7 +30,7 @@ const tickets = [
   },
   {
     name: "INGRESSO TRIPLO",
-    price: "85,00",
+    price: "70,00",
     badge: "promocional",
     badgeColor: "bg-accent text-primary",
     features: [
@@ -43,13 +43,13 @@ const tickets = [
   },
   {
     name: "VIP",
-    price: "130,00",
+    price: "150,00",
     badge: "promocional",
     badgeColor: "bg-destructive text-white",
     features: [
       "Entrada antecipada ao evento",
       "Crachá exclusivo VIP",
-      "R$ 130,00 em compras no estande Yume Geek Store ou na Lanchonete Konoha Lanches",
+      "R$ 150,00 em compras no estande Yume Geek Store ou na Lanchonete Konoha Lanches",
     ],
     note: "Experiência completa e diferenciada!",
     isVip: true,
@@ -117,7 +117,7 @@ const TicketCards = () => {
                   }`}
                   asChild
                 >
-                  <a href="https://www.uticket.com.br/event/01LD7OB8BD0LUA" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer">
                     QUERO ESTE
                   </a>
                 </Button>

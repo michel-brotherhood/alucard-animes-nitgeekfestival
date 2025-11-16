@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
 import FAQ from "@/components/FAQ";
-import SnowEffect from "@/components/SnowEffect";
+import SpaceEffect from "@/components/SpaceEffect";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Instagram } from "lucide-react";
@@ -45,7 +45,7 @@ const guests = [
 const LineUp = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <SnowEffect />
+      <SpaceEffect />
       <Header />
       
       <section className="bg-secondary py-16 px-6">
@@ -133,10 +133,10 @@ const LineUp = () => {
             Não perca essa experiência! 🎉
           </h3>
           <p className="text-white/90 text-lg mb-6">
-            Garanta seu ingresso agora e curta todos os artistas e atrações do Itanime!
+            Garanta seu ingresso agora e curta todos os artistas e atrações do NitGeek Festival!
           </p>
           <a 
-            href="https://www.uticket.com.br/event/01LD7OB8BD0LUA"
+            href="https://www.uticket.com.br/event/01LEBL5A2365D3"
             target="_blank"
             rel="noopener noreferrer" 
             className="inline-block bg-primary hover:bg-primary/90 text-white font-black text-xl px-12 py-4 rounded-full shadow-lg transition-all hover:scale-105"

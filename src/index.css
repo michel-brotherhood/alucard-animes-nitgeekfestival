@@ -125,15 +125,20 @@ All colors MUST be HSL.
     transform: translateY(0px);
   }
 
-  @keyframes snow {
+  @keyframes shooting-star {
     0% {
-      transform: translateY(-100px) translateX(0);
+      transform: translateX(0) translateY(0) rotate(-45deg);
+      opacity: 0;
     }
-    50% {
-      transform: translateY(50vh) translateX(10px);
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
     }
     100% {
-      transform: translateY(100vh) translateX(0);
+      transform: translateX(300px) translateY(300px) rotate(-45deg);
+      opacity: 0;
     }
   }
 
@@ -141,3 +146,4 @@ All colors MUST be HSL.
     animation: snow linear infinite;
   }
 }
+
