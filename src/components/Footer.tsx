@@ -1,6 +1,6 @@
 import { Facebook, Instagram, MessageCircle, MapPin, Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import nitgeekLogo from "@/assets/nitgeek-logo.webp";
+import nitgeekLogo from "@/assets/logov2.webp";
 import "./Footer.css";
 
 const Footer = () => {
@@ -47,10 +47,10 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/eventoitanime/" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
+              <a href="https://www.instagram.com/nitgeekfestival/" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
                 <Instagram className="w-5 h-5 text-white" />
               </a>
-              <a href="https://www.facebook.com/eventoitanime/" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
+              <a href="https://www.facebook.com/nitgeekfestival" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">
                 <Facebook className="w-5 h-5 text-white" />
               </a>
               <a href="https://api.whatsapp.com/send/?phone=5521977498015&text=Olá!+Gostaria+de+informações+sobre+o+NitGeek+Festival&type=phone_number" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-secondary transition-all">

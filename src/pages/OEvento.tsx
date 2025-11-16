@@ -6,7 +6,7 @@ import MapSection from "@/components/MapSection";
 import SpaceEffect from "@/components/SpaceEffect";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Calendar, MapPin, Star, Instagram, Facebook } from "lucide-react";
-import itanimeLogo from "@/assets/itanime-logo.svg";
+import nitgeekLogo from "@/assets/logov2.webp";
 import itanimePhoto1 from "@/assets/itanime-photo-1.jpg";
 import itanimePhoto2 from "@/assets/itanime-photo-2.jpg";
 import itanimePhoto3 from "@/assets/itanime-photo-3.jpg";
@@ -36,7 +36,7 @@ const OEvento = () => {
       <section className="bg-gradient-to-b from-secondary to-primary py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-black text-accent text-center mb-6">
-            O EVENTO
+            SOBRE O NITGEEK FESTIVAL
           </h1>
           <p className="text-xl text-white/90 text-center mb-12">
             O maior festival geek de Niterói
@@ -44,7 +44,7 @@ const OEvento = () => {
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <img src={itanimeLogo} alt="Itanime" className="w-48 md:w-56 h-auto object-contain" />
+            <img src={nitgeekLogo} alt="NitGeek Festival" className="w-64 md:w-80 h-auto object-contain" />
           </div>
 
           {/* Hero Section */}
@@ -99,20 +99,20 @@ const OEvento = () => {
           {/* Social CTAs */}
           <div className="flex justify-center gap-4 mb-12">
             <a
-              href="https://www.instagram.com/eventoitanime/"
+              href="https://www.instagram.com/nitgeekfestival/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 backdrop-blur-sm border-2 border-accent/30 rounded-full p-4 hover:bg-accent/20 hover:scale-110 transition-all"
-              aria-label="Instagram Itanime"
+              aria-label="Instagram NitGeek Festival"
             >
               <Instagram className="w-6 h-6 text-accent" />
             </a>
             <a
-              href="https://www.facebook.com/eventoitanime/"
+              href="https://www.facebook.com/nitgeekfestival"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 backdrop-blur-sm border-2 border-accent/30 rounded-full p-4 hover:bg-accent/20 hover:scale-110 transition-all"
-              aria-label="Facebook Itanime"
+              aria-label="Facebook NitGeek Festival"
             >
               <Facebook className="w-6 h-6 text-accent" />
             </a>
