@@ -1,4 +1,4 @@
-import videoHome from "@/assets/video_home.mp4";
+import heroVideo from "@/assets/hero-video-new.mp4";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const Hero = () => {
             <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
               <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.3] tracking-tight max-w-lg">
                 A maior experiência <br className="md:hidden" />
-                <span className="text-accent">geek</span> de Niterói
+                <span className="text-secondary">geek</span> de Niterói
               </h1>
               
               <div className="h-1 w-20 md:w-32 bg-foreground"></div>
@@ -75,7 +75,7 @@ const Hero = () => {
                 {/* Main Video */}
                 <div className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden border-8 md:border-[12px] border-foreground/80 shadow-2xl bg-sky-400">
                   <video 
-                    src={videoHome}
+                    src={heroVideo}
                     autoPlay
                     loop
                     muted
