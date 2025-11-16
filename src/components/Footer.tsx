@@ -1,6 +1,6 @@
 import { Facebook, Instagram, MessageCircle, MapPin, Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import itanimeLogo from "@/assets/itanime-logo.svg";
+import nitgeekLogo from "@/assets/nitgeek-logo.webp";
 import "./Footer.css";
 
 const Footer = () => {
@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <img src={itanimeLogo} alt="Itanime" className="h-20 mb-4" />
+            <img src={nitgeekLogo} alt="NitGeek Festival" className="h-20 mb-4" />
             <p className="text-white/80">
-              O maior evento geek de Itaboraí. Uma experiência inesquecível para todos os fãs!
+              O maior festival geek de Niterói. Uma experiência inesquecível para todos os fãs!
             </p>
           </div>
 
@@ -31,7 +31,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-white/80">
                 <Calendar className="w-4 h-4 text-accent" />
-                <span>07 de Dezembro de 2025</span>
+                <span>18 de Janeiro de 2026</span>
               </li>
               <li className="flex items-center gap-2 text-white/80">
                 <Clock className="w-4 h-4 text-accent" />
@@ -39,7 +39,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-white/80">
                 <MapPin className="w-4 h-4 text-accent" />
-                <span>Rotary Club de Itaboraí</span>
+                <span>Clube Canto do Rio - Niterói</span>
               </li>
             </ul>
           </div>
@@ -62,7 +62,7 @@ const Footer = () => {
 
         <div className="pt-8">
           <p className="text-white/60 text-center mb-2">
-            © 2025 Itanime - Produzido por Alucard Animes. Todos os direitos reservados.
+            © 2026 NitGeek Festival - Produzido por Alucard Animes. Todos os direitos reservados.
           </p>
           <p className="text-white/40 text-center text-sm">
             Desenvolvido por Michel Brotherhood

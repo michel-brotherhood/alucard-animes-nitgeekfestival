@@ -7,14 +7,14 @@ const EventInfo = () => {
         <div className="flex items-start md:items-center gap-3 md:gap-2 w-full md:w-auto justify-start md:justify-center">
           <Calendar className="w-6 h-6 md:w-6 md:h-6 flex-shrink-0 mt-1 md:mt-0" />
           <span className="text-base md:text-xl font-bold leading-relaxed">
-            07 de Dezembro de 2025 - 12h às 18h
+            18 de Janeiro de 2026 - 12h às 18h
           </span>
         </div>
         <div className="hidden md:block w-px h-8 bg-white/30"></div>
         <div className="flex items-start md:items-center gap-3 md:gap-2 w-full md:w-auto justify-start md:justify-center">
           <MapPin className="w-6 h-6 md:w-6 md:h-6 flex-shrink-0 mt-1 md:mt-0" />
           <span className="text-base md:text-xl font-bold leading-relaxed">
-            Rotary Club de Itaboraí - Itaboraí/RJ
+            Clube Canto do Rio - Niterói/RJ
           </span>
         </div>
       </div>
