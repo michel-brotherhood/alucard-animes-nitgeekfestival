@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Facebook } from "lucide-react";
-import logoFg from "@/assets/logo-fg.png";
+import nitgeekLogo from "@/assets/logov2.webp";
 import eventPhoto1 from "@/assets/event-photo-1.jpg";
 import eventPhoto2 from "@/assets/event-photo-2.jpg";
 import eventPhoto3 from "@/assets/event-photo-3.jpg";
@@ -22,20 +22,26 @@ const FriburgoGeekSection = () => {
     <section className="bg-gradient-to-b from-secondary to-primary py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-black text-accent text-center mb-8">
-          SOBRE O ITANIME
+          SOBRE O NITGEEK FESTIVAL
         </h2>
 
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <img src={logoFg} alt="Itanime" className="w-48 md:w-56 h-auto object-contain" />
+          <img src={nitgeekLogo} alt="NitGeek Festival" className="w-64 md:w-80 h-auto object-contain" />
         </div>
 
         {/* Text */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 mb-12 border-2 border-accent">
           <div className="space-y-4 text-white/90 text-lg">
             <p>
-              O Itanime tem a missão de celebrar a cultura geek — e as muitas culturas que a compõem, como games, quadrinhos, cinema, anime e tecnologia — em um formato acolhedor para toda a família. Promovemos eventos seguros e bem organizados em Itaboraí e região, com programação pensada para crianças, jovens e adultos, espaços de convivência, oficinas e atividades educativas. Nosso foco é simples: respeito, boa convivência e acessibilidade, sem bandeiras ou discursos — aqui o protagonismo é da experiência em família, do encontro entre gerações e do compartilhamento de referências. Queremos que cada edição seja um ponto de encontro da cidade e das cidades vizinhas, onde todos se sintam à vontade para curtir, descobrir novidades e voltar para casa com boas memórias.
+              Nascido no ano de 2017, o evento teve sua primeira edição em Niterói, onde atraiu a comunidade geek da cidade de Niterói, o evento retorna em 2023, trazendo muita cultura geek e novas atividades e atrações para os moradores de Niterói e cidades vizinhas.
             </p>
+            <div className="mt-8">
+              <h3 className="text-2xl font-black text-accent mb-4">Missão do NitGeek Festival</h3>
+              <p className="font-semibold">
+                Levar o melhor da cultura Geek/Games para a população de Niterói e cidades vizinhas, com eventos de qualidade, seguros em um ambiente familiar e sadio.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -85,20 +91,20 @@ const FriburgoGeekSection = () => {
         {/* Social CTAs */}
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.instagram.com/friburgogeek/"
+            href="https://www.instagram.com/nitgeekfestival/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm border-2 border-accent/30 rounded-full p-4 hover:bg-accent/20 hover:scale-110 transition-all"
-            aria-label="Instagram Itanime"
+            aria-label="Instagram NitGeek Festival"
           >
             <Instagram className="w-6 h-6 text-accent" />
           </a>
           <a
-            href="https://www.facebook.com/friburgogeek"
+            href="https://www.facebook.com/nitgeekfestival"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm border-2 border-accent/30 rounded-full p-4 hover:bg-accent/20 hover:scale-110 transition-all"
-            aria-label="Facebook Itanime"
+            aria-label="Facebook NitGeek Festival"
           >
             <Facebook className="w-6 h-6 text-accent" />
           </a>
