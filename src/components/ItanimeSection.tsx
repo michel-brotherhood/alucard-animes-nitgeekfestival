@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, Facebook } from "lucide-react";
-import itanimeLogo from "@/assets/itanime-logo.svg";
+import nitgeekLogo from "@/assets/logov2.webp";
 import itanimePhoto1 from "@/assets/itanime-photo-1.jpg";
 import itanimePhoto2 from "@/assets/itanime-photo-2.jpg";
 import itanimePhoto3 from "@/assets/itanime-photo-3.jpg";
@@ -19,35 +19,24 @@ const ItanimeSection = () => {
     <section className="bg-gradient-to-b from-secondary to-primary py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-black text-accent text-center mb-8">
-          SOBRE O ITANIME
+          SOBRE O NITGEEK FESTIVAL
         </h2>
 
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <img src={itanimeLogo} alt="Itanime" className="w-48 md:w-56 h-auto object-contain" />
+          <img src={nitgeekLogo} alt="NitGeek Festival" className="w-64 md:w-80 h-auto object-contain" />
         </div>
 
         {/* Text */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 mb-12 border-2 border-accent">
           <div className="space-y-4 text-white/90 text-lg">
             <p>
-              Desde 2013, o Itanime cresceu para se tornar um dos maiores eventos geek do RJ. A primeira edição rolou no Colégio Cenecista Alberto Torres, em Itaboraí, e de lá pra cá já recebeu atrações de peso: os dubladores Charles Emmanuel e Orlando Drummond, os cantores Rodrigo Rossi e Edu Falaschi (Cavaleiros in Concert) e o youtuber Player Tauz.
-            </p>
-            <p>
-              Referência em qualidade e diversão, o Itanime move a cena geek/otaku de Itaboraí e das cidades vizinhas.
+              Nascido no ano de 2017, o evento teve sua primeira edição em Niterói, onde atraiu a comunidade geek da cidade de Niterói, o evento retorna em 2023, trazendo muita cultura geek e novas atividades e atrações para os moradores de Niterói e cidades vizinhas.
             </p>
             <div className="mt-8">
-              <h3 className="text-2xl font-black text-accent mb-4">Missão</h3>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>Promover cultura geek/anime com qualidade e segurança.</li>
-                <li>Garantir acessibilidade e ambiente familiar.</li>
-                <li>Combater assédio e discriminação.</li>
-                <li>Incentivar talentos e negócios locais.</li>
-                <li>Oferecer conteúdo que diverte e ensina (workshops, painéis, shows).</li>
-                <li>Aproximar fãs, criadores e marcas para fazer a cena crescer.</li>
-              </ul>
-              <p className="mt-4 font-semibold">
-                Levar o melhor da cultura geek e dos animes para Itaboraí e região — com eventos de qualidade, seguros e em um ambiente familiar e acolhedor.
+              <h3 className="text-2xl font-black text-accent mb-4">Missão do NitGeek Festival</h3>
+              <p className="font-semibold">
+                Levar o melhor da cultura Geek/Games para a população de Niterói e cidades vizinhas, com eventos de qualidade, seguros em um ambiente familiar e sadio.
               </p>
             </div>
           </div>
@@ -100,20 +89,20 @@ const ItanimeSection = () => {
         {/* Social CTAs */}
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.instagram.com/eventoitanime/"
+            href="https://www.instagram.com/nitgeekfestival/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm border-2 border-accent/30 rounded-full p-4 hover:bg-accent/20 hover:scale-110 transition-all"
-            aria-label="Instagram Itanime"
+            aria-label="Instagram NitGeek Festival"
           >
             <Instagram className="w-6 h-6 text-accent" />
           </a>
           <a
-            href="https://www.facebook.com/eventoitanime/"
+            href="https://www.facebook.com/nitgeekfestival"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm border-2 border-accent/30 rounded-full p-4 hover:bg-accent/20 hover:scale-110 transition-all"
-            aria-label="Facebook Itanime"
+            aria-label="Facebook NitGeek Festival"
           >
             <Facebook className="w-6 h-6 text-accent" />
           </a>
