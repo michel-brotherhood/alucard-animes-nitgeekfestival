@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       jurado_cosplay_applications: {
         Row: {
+          cidade: string
           concursos_ganhos: string
           created_at: string
           email: string
@@ -32,6 +33,7 @@ export type Database = {
           whatsapp: string
         }
         Insert: {
+          cidade?: string
           concursos_ganhos: string
           created_at?: string
           email: string
@@ -48,6 +50,7 @@ export type Database = {
           whatsapp: string
         }
         Update: {
+          cidade?: string
           concursos_ganhos?: string
           created_at?: string
           email?: string
