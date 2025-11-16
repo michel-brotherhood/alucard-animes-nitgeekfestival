@@ -39,7 +39,7 @@ const OEvento = () => {
             O EVENTO
           </h1>
           <p className="text-xl text-white/90 text-center mb-12">
-            O encontro perfeito para geeks, otakus e gamers em Itaboraí
+            O maior festival geek de Niterói
           </p>
 
           {/* Logo */}
@@ -51,10 +51,10 @@ const OEvento = () => {
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 mb-12 border-2 border-accent">
             <div className="space-y-4 text-white/90 text-lg">
               <p>
-                Desde 2013, o Itanime cresceu para se tornar um dos maiores eventos geek do RJ. A primeira edição rolou no Colégio Cenecista Alberto Torres, em Itaboraí, e de lá pra cá já recebeu atrações de peso: os dubladores Charles Emmanuel e Orlando Drummond, os cantores Rodrigo Rossi e Edu Falaschi (Cavaleiros in Concert) e o youtuber Player Tauz.
+                Desde 2017, o NitGeek Festival tem sido o epicentro da cultura geek em Niterói. Com uma trajetória de sucesso, já recebemos grandes nomes e atrações que marcaram a história dos eventos geek no estado do Rio de Janeiro.
               </p>
               <p>
-                Referência em qualidade e diversão, o Itanime move a cena geek/otaku de Itaboraí e das cidades vizinhas.
+                Referência em qualidade e diversão, o NitGeek Festival move a cena geek/otaku de Niterói e região.
               </p>
               <div className="mt-8">
                 <h3 className="text-2xl font-black text-accent mb-4">Missão</h3>
@@ -67,7 +67,7 @@ const OEvento = () => {
                   <li>Aproximar fãs, criadores e marcas para fazer a cena crescer.</li>
                 </ul>
                 <p className="mt-4 font-semibold">
-                  Levar o melhor da cultura geek e dos animes para Itaboraí e região — com eventos de qualidade, seguros e em um ambiente familiar e acolhedor.
+                  Levar o melhor da cultura geek e dos animes para Niterói e região — com eventos de qualidade, seguros e em um ambiente familiar e acolhedor.
                 </p>
               </div>
             </div>
@@ -133,16 +133,16 @@ const OEvento = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
             <Card className="bg-accent border-0 text-center">
               <CardContent className="p-4 md:p-6">
-                <Users className="w-8 h-8 md:w-12 md:h-12 text-secondary mx-auto mb-2 md:mb-4" />
-                <div className="text-2xl md:text-4xl font-black text-secondary mb-1 md:mb-2">1 Dia</div>
-                <div className="text-xs md:text-base text-secondary/80 font-bold">De pura diversão</div>
+                <Calendar className="w-8 h-8 md:w-12 md:h-12 text-secondary mx-auto mb-2 md:mb-4" />
+                <div className="text-2xl md:text-4xl font-black text-secondary mb-1 md:mb-2">18 Jan</div>
+                <div className="text-xs md:text-base text-secondary/80 font-bold">2026</div>
               </CardContent>
             </Card>
             <Card className="bg-accent border-0 text-center">
               <CardContent className="p-4 md:p-6">
-                <Calendar className="w-8 h-8 md:w-12 md:h-12 text-secondary mx-auto mb-2 md:mb-4" />
-                <div className="text-2xl md:text-4xl font-black text-secondary mb-1 md:mb-2">6 horas</div>
-                <div className="text-xs md:text-base text-secondary/80 font-bold">Das 12h às 18h</div>
+                <Users className="w-8 h-8 md:w-12 md:h-12 text-secondary mx-auto mb-2 md:mb-4" />
+                <div className="text-2xl md:text-4xl font-black text-secondary mb-1 md:mb-2">12h-18h</div>
+                <div className="text-xs md:text-base text-secondary/80 font-bold">6 horas de diversão</div>
               </CardContent>
             </Card>
             <Card className="bg-accent border-0 text-center">
