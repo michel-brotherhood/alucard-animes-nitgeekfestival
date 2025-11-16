@@ -60,7 +60,7 @@ const ConcursoAnimeke = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'itanime@alucardanimes.com.br',
+          to: 'nitgeek@alucardanimes.com.br',
           subject: 'Nova Inscrição - Campeonato Animekê',
           formData: values,
           formType: 'Campeonato Animekê'
@@ -389,7 +389,7 @@ const ConcursoAnimeke = () => {
                     <p className="text-white/90 text-sm md:text-base">
                       Dúvidas? {" "}
                       <a 
-                        href="mailto:itanime@alucardanimes.com.br?subject=Dúvida%20-%20Campeonato%20Animekê"
+                        href="mailto:nitgeek@alucardanimes.com.br?subject=Dúvida%20-%20Campeonato%20Animekê"
                         className="text-accent hover:text-accent/80 underline font-semibold transition-colors"
                       >
                         Fale com a equipe Alucard

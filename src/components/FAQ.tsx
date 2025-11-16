@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 const faqs = [
   {
     question: "Quando será realizado o evento?",
-    answer: "07 de dezembro de 2025."
+    answer: "18 de janeiro de 2026."
   },
   {
     question: "Onde será realizado?",
-    answer: "Rotary Club de Itaboraí - R. Des. Ferreira Pinto, 226 - Centro, Itaboraí - RJ."
+    answer: "Clube Canto do Rio - Av Visconde do Rio Branco, 701 - Centro, Niterói - RJ, 24020-005."
   },
   {
     question: "Qual o horário?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "É um evento para toda família?",
-    answer: "Sim, o Itanime é um evento familiar."
+    answer: "Sim, o NitGeek Festival é um evento familiar."
   },
   {
     question: "Tem que pagar para entrar?",
