@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isConcursosOpen, setIsConcursosOpen] = useState(false);
   const [isContatoOpen, setIsContatoOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Bloquear scroll do body quando menu abrir
   useEffect(() => {
@@ -21,10 +22,20 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
+  // Detectar scroll para adicionar blur
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="w-full bg-transparent">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-2 md:py-4">
-        <nav className="bg-primary rounded-full py-2 md:py-3 px-4 md:px-8 flex items-center justify-between shadow-lg">
+    <header className={`w-full sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-background/30' : 'bg-transparent'}`}>
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 md:py-4">
+        <nav className={`bg-primary rounded-full py-3 md:py-3 px-4 md:px-8 flex items-center justify-between shadow-lg transition-all duration-300 ${isScrolled ? 'shadow-2xl' : ''}`}>
           <div className="flex items-center gap-4 md:gap-12">
             <Link to="/" className="flex items-center hover:opacity-90 transition-opacity">
               <img 
@@ -154,9 +165,28 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer">
+          <a 
+            href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-3d hidden sm:inline-block"
+          >
+            <span className="btn-3d-top">
+              INGRESSOS
+            </span>
+            <span className="btn-3d-bottom"></span>
+            <span className="btn-3d-base"></span>
+          </a>
+          
+          {/* Botão simplificado para mobile */}
+          <a 
+            href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="sm:hidden"
+          >
             <Button 
-              className="bg-accent text-primary hover:bg-accent/90 font-bold text-xs md:text-sm px-4 md:px-8 py-2 md:py-2.5 rounded-full shadow-lg"
+              className="bg-accent text-primary hover:bg-accent/90 font-bold text-xs px-4 py-2 rounded-full shadow-lg"
             >
               Ingressos
             </Button>
