@@ -14,13 +14,13 @@ const Hero = () => {
             <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
               <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.3] tracking-tight max-w-lg">
                 A maior experiência <br className="md:hidden" />
-                <span className="text-secondary">geek</span> de Niterói
+                <span className="text-secondary">geek</span> de Niterói <span className="text-primary">2026</span>
               </h1>
               
               <div className="h-1 w-20 md:w-32 bg-foreground"></div>
               
               <p className="text-muted-foreground text-base md:text-lg max-w-md leading-relaxed">
-                Experiência única que oferece aos fãs controle incomparável sobre cultura geek, anime, cosplay, games, E-sports e muito mais...
+                Experiência desde 2017 que oferece aos fãs controle incomparável sobre cultura geek, anime, cosplay, games, E-sports e muito mais...
               </p>
               
               <div className="flex gap-3 md:gap-4 flex-wrap">
