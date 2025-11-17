@@ -165,24 +165,20 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <a 
-            href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/ingressos"
             className="btn-skewed hidden sm:inline-flex items-center justify-center px-6 rounded-md h-10 font-bold text-sm uppercase"
           >
             INGRESSOS
-          </a>
+          </Link>
           
           {/* Botão simplificado para mobile */}
-          <a 
-            href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/ingressos"
             className="sm:hidden btn-skewed flex items-center justify-center px-4 rounded-md h-9 font-bold text-xs uppercase"
           >
             Ingressos
-          </a>
+          </Link>
           
           <button 
             className="lg:hidden text-white ml-2"
@@ -338,15 +334,13 @@ const Header = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <a 
-                    href="https://www.uticket.com.br/event/01LEBL5A2365D3"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link 
+                    to="/ingressos"
                     onClick={() => setIsMenuOpen(false)}
                     className="mt-6 btn-skewed w-full text-center flex items-center justify-center py-4 font-bold text-base uppercase"
                   >
                     COMPRAR INGRESSOS
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </div>
