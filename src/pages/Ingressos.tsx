@@ -98,7 +98,7 @@ const Ingressos = () => {
                   {ticket.name}
                 </h3>
                 <p className="text-sm text-foreground/60 mb-4">A partir de</p>
-                <div className={`text-5xl font-black mb-2 ${ticket.isVip ? 'text-transparent bg-clip-text bg-gradient-to-r from-destructive to-primary' : 'text-primary'}`}>
+                <div className={`text-5xl font-black mb-2 ${ticket.isVip ? 'text-transparent bg-clip-text bg-gradient-to-r from-destructive to-primary' : 'text-[hsl(45,100%,35%)]'}`}>
                   {ticket.price}
                 </div>
                 <div className={`inline-block px-4 py-1 rounded-full text-sm font-bold ${ticket.badgeColor}`}>
