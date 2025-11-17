@@ -161,7 +161,7 @@ All colors MUST be HSL.
     color: #fff;
     height: 2.6em;
     text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, filter 0.15s ease;
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;
@@ -170,8 +170,9 @@ All colors MUST be HSL.
   }
 
   .btn-gradient:hover {
-    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0, 0 0 20px rgba(84, 104, 255, 0.6);
     transform: translateY(-0.1em);
+    filter: brightness(1.1);
   }
 
   .btn-gradient:active {

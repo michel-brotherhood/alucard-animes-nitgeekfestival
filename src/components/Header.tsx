@@ -179,13 +179,9 @@ const Header = () => {
             href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="sm:hidden"
+            className="sm:hidden btn-gradient text-sm h-9"
           >
-            <Button 
-              className="bg-accent text-primary hover:bg-accent/90 font-bold text-xs px-4 py-2 rounded-full shadow-lg"
-            >
-              Ingressos
-            </Button>
+            Ingressos
           </a>
           
           <button 
@@ -208,149 +204,151 @@ const Header = () => {
           />
           
           {/* Menu Drawer */}
-          <div className="lg:hidden fixed inset-0 w-full bg-primary shadow-2xl z-50 animate-slide-in-right overflow-y-auto">
-            <div className="p-5 pb-6">
-              {/* Close Button */}
-              <button 
-                onClick={() => setIsMenuOpen(false)}
-                className="absolute top-3 right-3 text-white/80 hover:text-white transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+          <div className="lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-gradient-to-b from-primary via-primary to-primary/95 shadow-2xl z-50 animate-slide-in-right overflow-hidden">
+            <div className="h-full overflow-y-auto">
+              <div className="p-6">
+                {/* Close Button */}
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
 
-              {/* Logo */}
-              <div className="mb-6">
-                <img 
-                  src={nitgeekLogo} 
-                  alt="NitGeek Festival" 
-                  className="h-10 w-auto"
-                />
-              </div>
-
-              {/* Menu Items */}
-              <nav className="flex flex-col gap-0.5">
-                <Link 
-                  to="/" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white font-bold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  Home
-                </Link>
-                <Link 
-                  to="/o-evento" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white font-semibold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  O evento
-                </Link>
-                <Link 
-                  to="/line-up" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white font-semibold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  Line up
-                </Link>
-                <Link 
-                  to="/cronograma" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white font-semibold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  Cronograma
-                </Link>
-                
-                {/* Concursos Section */}
-                <div className="mt-2 mb-1">
-                  <p className="text-accent text-xs font-bold uppercase tracking-wider px-3 mb-1">
-                    Concursos
-                  </p>
-                  <Link 
-                    to="/concursos" 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-white font-semibold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors block"
-                  >
-                    Todos
-                  </Link>
-                  <Link 
-                    to="/concursos/cosplay" 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-white/90 text-sm py-2 px-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
-                  >
-                    <span className="text-base">🏆</span>
-                    <span>Cosplay</span>
-                  </Link>
-                  <Link 
-                    to="/concursos/kpop" 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-white/90 text-sm py-2 px-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
-                  >
-                    <span className="text-base">🎵</span>
-                    <span>K-pop</span>
-                  </Link>
-                  <Link 
-                    to="/concursos/animeke" 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-white/90 text-sm py-2 px-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
-                  >
-                    <span className="text-base">🎤</span>
-                    <span>Animekê</span>
-                  </Link>
-                  <Link 
-                    to="/concursos/videogames" 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-white/90 text-sm py-2 px-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
-                  >
-                    <span className="text-base">🎮</span>
-                    <span>Videogames</span>
-                  </Link>
+                {/* Logo */}
+                <div className="mb-8 pt-2">
+                  <img 
+                    src={nitgeekLogo} 
+                    alt="NitGeek Festival" 
+                    className="h-12 w-auto"
+                  />
                 </div>
 
-                <div className="border-t border-white/20 my-2"></div>
-                
-                <Link 
-                  to="/quem-somos" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white font-semibold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  Quem somos
-                </Link>
-                
-                {/* Contato Section */}
-                <div className="mt-2 mb-1">
-                  <p className="text-accent text-xs font-bold uppercase tracking-wider px-3 mb-1">
-                    Contato
-                  </p>
+                {/* Menu Items */}
+                <nav className="flex flex-col gap-1">
                   <Link 
-                    to="/contato" 
+                    to="/" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-white font-semibold py-2.5 px-3 rounded-full hover:bg-white/10 transition-colors block"
+                    className="text-white font-bold text-lg py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95"
                   >
-                    Fale Conosco
+                    Home
                   </Link>
                   <Link 
-                    to="/ajuda" 
+                    to="/o-evento" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-white/90 text-sm py-2 px-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
+                    className="text-white font-semibold text-lg py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95"
                   >
-                    <span className="text-base">❓</span>
-                    <span>Ajuda</span>
+                    O evento
                   </Link>
-                </div>
+                  <Link 
+                    to="/line-up" 
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-white font-semibold text-lg py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95"
+                  >
+                    Line up
+                  </Link>
+                  <Link 
+                    to="/cronograma" 
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-white font-semibold text-lg py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95"
+                  >
+                    Cronograma
+                  </Link>
+                  
+                  {/* Concursos Section */}
+                  <div className="mt-4">
+                    <p className="text-accent text-xs font-extrabold uppercase tracking-wider px-4 mb-2 flex items-center gap-2">
+                      <span className="w-6 h-0.5 bg-accent/50"></span>
+                      Concursos
+                    </p>
+                    <Link 
+                      to="/concursos" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 block"
+                    >
+                      Todos os Concursos
+                    </Link>
+                    <Link 
+                      to="/concursos/cosplay" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white/90 py-2.5 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 flex items-center gap-3"
+                    >
+                      <span className="text-xl">🏆</span>
+                      <span>Cosplay</span>
+                    </Link>
+                    <Link 
+                      to="/concursos/kpop" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white/90 py-2.5 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 flex items-center gap-3"
+                    >
+                      <span className="text-xl">🎵</span>
+                      <span>K-pop</span>
+                    </Link>
+                    <Link 
+                      to="/concursos/animeke" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white/90 py-2.5 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 flex items-center gap-3"
+                    >
+                      <span className="text-xl">🎤</span>
+                      <span>Animekê</span>
+                    </Link>
+                    <Link 
+                      to="/concursos/videogames" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white/90 py-2.5 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 flex items-center gap-3"
+                    >
+                      <span className="text-xl">🎮</span>
+                      <span>Videogames</span>
+                    </Link>
+                  </div>
 
-                {/* CTA Button */}
-                <a 
-                  href="https://www.uticket.com.br/event/01LEBL5A2365D3"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="mt-4 block"
-                >
-                  <Button className="w-full bg-accent text-primary hover:bg-accent/90 font-bold py-5 rounded-full">
+                  <div className="border-t border-white/20 my-4"></div>
+                  
+                  <Link 
+                    to="/quem-somos" 
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-white font-semibold text-lg py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95"
+                  >
+                    Quem somos
+                  </Link>
+                  
+                  {/* Contato Section */}
+                  <div className="mt-4">
+                    <p className="text-accent text-xs font-extrabold uppercase tracking-wider px-4 mb-2 flex items-center gap-2">
+                      <span className="w-6 h-0.5 bg-accent/50"></span>
+                      Contato
+                    </p>
+                    <Link 
+                      to="/contato" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 block"
+                    >
+                      Fale Conosco
+                    </Link>
+                    <Link 
+                      to="/ajuda" 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white/90 py-2.5 px-4 rounded-xl hover:bg-white/10 transition-all active:scale-95 flex items-center gap-3"
+                    >
+                      <span className="text-xl">❓</span>
+                      <span>Ajuda</span>
+                    </Link>
+                  </div>
+
+                  {/* CTA Button */}
+                  <a 
+                    href="https://www.uticket.com.br/event/01LEBL5A2365D3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="mt-6 btn-gradient w-full text-center"
+                  >
                     COMPRAR INGRESSOS
-                  </Button>
-                </a>
-              </nav>
+                  </a>
+                </nav>
+              </div>
             </div>
           </div>
         </>
