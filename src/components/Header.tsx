@@ -169,13 +169,9 @@ const Header = () => {
             href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="btn-3d hidden sm:inline-block"
+            className="btn-gradient hidden sm:inline-flex"
           >
-            <span className="btn-3d-top">
-              INGRESSOS
-            </span>
-            <span className="btn-3d-bottom"></span>
-            <span className="btn-3d-base"></span>
+            INGRESSOS
           </a>
           
           {/* Botão simplificado para mobile */}

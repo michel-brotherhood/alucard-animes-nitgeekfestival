@@ -146,97 +146,37 @@ All colors MUST be HSL.
     animation: snow linear infinite;
   }
 
-  /* Botão 3D customizado */
-  .btn-3d {
-    -webkit-appearance: none;
-    appearance: none;
-    position: relative;
-    border-width: 0;
-    padding: 0 8px 12px;
-    min-width: 10em;
-    box-sizing: border-box;
-    background: transparent;
-    font: inherit;
-    cursor: pointer;
-    text-decoration: none;
+  /* Botão com gradiente e efeito 3D */
+  .btn-gradient {
+    font-size: 18px;
     display: inline-block;
-  }
-
-  .btn-3d-top {
-    display: flex;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    will-change: box-shadow, transform;
+    background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    padding: 0 2em;
+    border-radius: 0.3em;
+    color: #fff;
+    height: 2.6em;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 0;
-    padding: 8px 16px;
-    transform: translateY(0);
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 -1px rgba(0, 0, 0, .25);
-    transition-property: transform;
-    transition-duration: .2s;
-    -webkit-user-select: none;
-    user-select: none;
-    font-weight: 700;
   }
 
-  .btn-3d:active .btn-3d-top {
-    transform: translateY(6px);
+  .btn-gradient:hover {
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+    transform: translateY(-0.1em);
   }
 
-  .btn-3d-top::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    border-radius: 4px;
-    width: 100%;
-    height: 100%;
-    box-sizing: content-box;
-    background-image: radial-gradient(#cd3f64, #9d3656);
-    text-align: center;
-    color: #fff;
-    box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2);
-    transition-property: border-radius, padding, width, transform;
-    transition-duration: .2s;
-  }
-
-  .btn-3d:active .btn-3d-top::after {
-    border-radius: 6px;
-    padding: 0 2px;
-  }
-
-  .btn-3d-bottom {
-    position: absolute;
-    z-index: -1;
-    bottom: 4px;
-    left: 4px;
-    border-radius: 8px / 16px 16px 8px 8px;
-    padding-top: 6px;
-    width: calc(100% - 8px);
-    height: calc(100% - 10px);
-    box-sizing: content-box;
-    background-color: #803;
-    background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent);
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4);
-    transition-property: border-radius, padding-top;
-    transition-duration: .2s;
-  }
-
-  .btn-3d:active .btn-3d-bottom {
-    border-radius: 10px 10px 8px 8px / 8px;
-    padding-top: 0;
-  }
-
-  .btn-3d-base {
-    position: absolute;
-    z-index: -2;
-    top: 4px;
-    left: 0;
-    border-radius: 12px;
-    width: 100%;
-    height: calc(100% - 4px);
-    background-color: rgba(0, 0, 0, .15);
-    box-shadow: 0 1px 1px 0 rgba(255, 255, 255, .75), inset 0 2px 2px rgba(0, 0, 0, .25);
+  .btn-gradient:active {
+    box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+    transform: translateY(0em);
   }
 }
 
