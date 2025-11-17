@@ -33,7 +33,7 @@ const SpaceEffect = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-gradient-to-b from-secondary/20 via-primary/10 to-background">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Stars */}
       {stars.map((star) => (
         <div
