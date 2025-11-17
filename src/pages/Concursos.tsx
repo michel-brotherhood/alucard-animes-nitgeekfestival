@@ -55,7 +55,7 @@ const Concursos = () => {
             CONCURSOS
           </h1>
           <p className="text-xl text-white/90 text-center mb-12">
-            Participe das competições e mostre seu talento no Itanime!
+            Participe das competições e mostre seu talento no NitGeek Festival!
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -104,21 +104,38 @@ const Concursos = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/90">
               <div>
-                <h3 className="font-bold text-accent mb-2">Inscrições:</h3>
+                <h3 className="font-bold text-accent mb-2">📅 Data e Horário:</h3>
                 <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Cosplay: Até 05 de Dezembro de 2025</li>
-                  <li>K-pop: Até 05 de Dezembro de 2025</li>
-                  <li>Animekê: Mínimo 3 e máximo 10 por dia</li>
-                  <li>Videogames: Por ordem de chegada (8 a 16 vagas)</li>
+                  <li>Data: 11 de Janeiro de 2025</li>
+                  <li>Horário: 12:00 às 18:00</li>
+                  <li>Local: Niterói - RJ</li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-accent mb-2">Premiações:</h3>
+                <h3 className="font-bold text-accent mb-2">🎫 Ingressos:</h3>
                 <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Cosplay: Medalhas + até R$ 100 em brindes</li>
-                  <li>K-pop: R$ 400,00 por chave</li>
-                  <li>Animekê: Medalha + Kit de produtos</li>
-                  <li>Videogames: R$ 100,00</li>
+                  <li>A partir de R$ 30,00</li>
+                  <li>Ingressos no dia serão mais caros</li>
+                  <li>VIP com entrada antecipada disponível</li>
+                  <li>Compre antecipado e economize!</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-accent mb-2">🎮 Atividades:</h3>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Concursos de Cosplay, K-pop e Animekê</li>
+                  <li>Campeonatos de Videogames</li>
+                  <li>Shows e apresentações</li>
+                  <li>Área de vendedores e food trucks</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-accent mb-2">📋 Informações Gerais:</h3>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Cosplayers têm entrada antecipada</li>
+                  <li>Permitido levar frutas e água</li>
+                  <li>Reentrada permitida após 16h</li>
+                  <li>Vagas limitadas para concursos</li>
                 </ul>
               </div>
             </div>
