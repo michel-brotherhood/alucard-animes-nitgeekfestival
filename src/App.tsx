@@ -22,6 +22,7 @@ import Contato from "./pages/Contato";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import QuemSomos from "./pages/QuemSomos";
 import JuradoCosplay from "./pages/JuradoCosplay";
+import Confirmacao from "./pages/Confirmacao";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/contato" element={<Contato />} />
           <Route path="/quem-somos" element={<QuemSomos />} />
           <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
+          <Route path="/confirmacao" element={<Confirmacao />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

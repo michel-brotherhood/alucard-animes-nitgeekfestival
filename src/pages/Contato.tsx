@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
@@ -61,6 +62,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const Contato = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -101,7 +103,13 @@ const Contato = () => {
         description: "Entraremos em contato em breve.",
       });
       
-      form.reset();
+      // Redirecionar para página de confirmação
+      navigate('/confirmacao', { 
+        state: { 
+          formData: data, 
+          formType: 'Formulário de Contato' 
+        } 
+      });
     } catch (error) {
       console.error(error);
       toast({
