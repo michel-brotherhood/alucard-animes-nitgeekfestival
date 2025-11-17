@@ -204,7 +204,7 @@ const Header = () => {
           />
           
           {/* Menu Drawer */}
-          <div className="lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-gradient-to-b from-primary via-primary to-primary/95 shadow-2xl z-50 animate-slide-in-right overflow-hidden">
+          <div className="lg:hidden fixed inset-0 bg-gradient-to-b from-primary via-primary to-primary/95 shadow-2xl z-50 animate-slide-in-right overflow-hidden">
             <div className="h-full overflow-y-auto">
               <div className="p-6">
                 {/* Close Button */}
