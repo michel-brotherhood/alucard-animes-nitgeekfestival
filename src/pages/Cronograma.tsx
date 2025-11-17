@@ -36,8 +36,8 @@ const Cronograma = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-accent rounded-t-2xl p-4 text-center">
-              <h2 className="text-3xl font-black text-secondary">DOMINGO</h2>
-              <p className="text-secondary/80 font-bold">14 de Dezembro de 2025</p>
+              <h2 className="text-3xl font-black text-secondary">SÁBADO</h2>
+              <p className="text-secondary/80 font-bold">18 de Janeiro de 2025</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-b-2xl p-4 md:p-6 space-y-3 md:space-y-4 border-2 border-accent/30">
