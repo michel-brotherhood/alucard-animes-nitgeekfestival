@@ -6,7 +6,7 @@ import SpaceEffect from "@/components/SpaceEffect";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Instagram } from "lucide-react";
-import eventLogo from "@/assets/itanime-logo.svg";
+import eventLogo from "@/assets/logov2.webp";
 import raphaelVideo from "@/assets/raphael-freitas-performance.mp4";
 
 type ArtistWithVideo = {
@@ -54,7 +54,7 @@ const LineUp = () => {
             LINE-UP
           </h1>
           <p className="text-xl text-white/90 text-center mb-12">
-            Conheça os incríveis artistas confirmados para o Itanime!
+            Conheça os incríveis artistas confirmados para o NitGeek Festival!
           </p>
 
           <div className="space-y-12">
@@ -104,7 +104,7 @@ const LineUp = () => {
                             <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
                               <img 
                                 src={eventLogo} 
-                                alt="Itanime"
+                                alt="NitGeek Festival"
                                 className="w-full h-full object-contain opacity-50"
                               />
                             </div>
