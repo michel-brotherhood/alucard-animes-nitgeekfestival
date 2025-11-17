@@ -12,9 +12,11 @@ const Hero = () => {
             
             {/* Left Content */}
             <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
-              <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.3] tracking-tight max-w-lg">
-                A maior experiência <br className="md:hidden" />
-                <span className="text-secondary">geek</span> de Niterói <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-gradient-x">em 2026</span>
+              <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.3] tracking-tight">
+                A maior experiência{" "}
+                <span className="text-secondary">geek</span>{" "}
+                de Niterói{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-gradient-x">em 2026</span>
               </h1>
               
               <div className="h-1 w-20 md:w-32 bg-foreground"></div>
@@ -30,7 +32,7 @@ const Hero = () => {
                   className="text-sm md:text-base px-6 md:px-10 py-5 md:py-6 rounded-2xl"
                   asChild
                 >
-                  <a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer">Comprar Agora</a>
+                  <a href="https://www.uticket.com.br/event/01LEBL5A2365D3" target="_blank" rel="noopener noreferrer">Quero Participar</a>
                 </Button>
                 <Button 
                   variant="outline" 
