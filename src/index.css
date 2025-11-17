@@ -111,18 +111,38 @@ All colors MUST be HSL.
     font-weight: 700;
     text-transform: uppercase;
     color: white;
+    background: linear-gradient(135deg, hsl(195 100% 39%), hsl(180 100% 50%));
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.4), 0 4px 10px rgba(0, 191, 255, 0.3);
+  }
+  
+  .btn-skewed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 191, 255, 0.5), 0 6px 14px rgba(0, 191, 255, 0.4);
+  }
+  
+  .btn-skewed:active {
+    transform: translateY(0px);
+  }
+
+  .btn-skewed-dark {
+    position: relative;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
     background: linear-gradient(135deg, hsl(195 100% 28%), hsl(180 100% 35%));
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 140, 190, 0.4), 0 4px 10px rgba(0, 140, 190, 0.3);
   }
   
-  .btn-skewed:hover {
+  .btn-skewed-dark:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(0, 191, 255, 0.6), 0 6px 14px rgba(0, 191, 255, 0.4), 0 0 25px rgba(0, 191, 255, 0.3);
     filter: brightness(1.1);
   }
   
-  .btn-skewed:active {
+  .btn-skewed-dark:active {
     transform: translateY(0px);
   }
 

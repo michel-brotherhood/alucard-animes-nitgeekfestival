@@ -167,7 +167,7 @@ const Header = () => {
         <div className="flex items-center gap-2 md:gap-3">
           <Link 
             to="/ingressos"
-            className="btn-skewed hidden sm:inline-flex items-center justify-center px-6 rounded-md h-10 font-bold text-sm uppercase"
+            className="btn-skewed-dark hidden sm:inline-flex items-center justify-center px-6 rounded-md h-10 font-bold text-sm uppercase"
           >
             INGRESSOS
           </Link>
@@ -175,7 +175,7 @@ const Header = () => {
           {/* Botão simplificado para mobile */}
           <Link 
             to="/ingressos"
-            className="sm:hidden btn-skewed flex items-center justify-center px-4 rounded-md h-9 font-bold text-xs uppercase"
+            className="sm:hidden btn-skewed-dark flex items-center justify-center px-4 rounded-md h-9 font-bold text-xs uppercase"
           >
             Ingressos
           </Link>
@@ -337,7 +337,7 @@ const Header = () => {
                   <Link 
                     to="/ingressos"
                     onClick={() => setIsMenuOpen(false)}
-                    className="mt-6 btn-skewed w-full text-center flex items-center justify-center py-4 font-bold text-base uppercase"
+                    className="mt-6 btn-skewed-dark w-full text-center flex items-center justify-center py-4 font-bold text-base uppercase"
                   >
                     COMPRAR INGRESSOS
                   </Link>
