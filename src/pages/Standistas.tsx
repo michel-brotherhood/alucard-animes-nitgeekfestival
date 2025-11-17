@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingMenu from "@/components/FloatingMenu";
@@ -27,6 +28,7 @@ const formSchema = z.object({
 
 const Standistas = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -58,7 +60,14 @@ const Standistas = () => {
         title: "Solicitação enviada!",
         description: "Você receberá um email de confirmação em breve.",
       });
-      form.reset();
+      
+      // Redirecionar para página de confirmação
+      navigate('/confirmacao', { 
+        state: { 
+          formData: values, 
+          formType: 'Solicitação de Estande' 
+        } 
+      });
     } catch (error) {
       console.error(error);
       toast({
