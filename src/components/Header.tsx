@@ -167,18 +167,18 @@ const Header = () => {
         <div className="flex items-center gap-2 md:gap-3">
           <Link 
             to="/ingressos"
-            className="hidden sm:inline-flex items-center justify-center px-6 rounded-full h-11 font-black text-sm uppercase bg-gradient-to-r from-accent via-primary to-accent bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-500 text-white shadow-[0_0_20px_rgba(0,191,255,0.5)] hover:shadow-[0_0_30px_rgba(0,191,255,0.8)] hover:scale-105 relative overflow-hidden group"
+            className="hidden sm:inline-flex items-center justify-center px-6 rounded-full h-11 font-black text-sm uppercase bg-gradient-to-r from-[hsl(195,100%,28%)] via-[hsl(195,100%,35%)] to-[hsl(180,100%,35%)] bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-500 text-white shadow-[0_0_20px_rgba(0,140,190,0.5)] hover:shadow-[0_0_30px_rgba(0,191,255,0.8)] hover:scale-105 relative overflow-hidden group"
           >
-            <span className="relative z-10">🎟️ INGRESSOS</span>
+            <span className="relative z-10">INGRESSOS</span>
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
           </Link>
           
           {/* Botão simplificado para mobile */}
           <Link 
             to="/ingressos"
-            className="sm:hidden flex items-center justify-center px-4 rounded-full h-10 font-bold text-xs uppercase bg-gradient-to-r from-accent to-primary text-white shadow-lg hover:shadow-xl transition-all"
+            className="sm:hidden flex items-center justify-center px-4 rounded-full h-10 font-bold text-xs uppercase bg-gradient-to-r from-[hsl(195,100%,28%)] to-[hsl(195,100%,35%)] text-white shadow-lg hover:shadow-xl transition-all"
           >
-            🎟️ Ingressos
+            Ingressos
           </Link>
           
           <button 
