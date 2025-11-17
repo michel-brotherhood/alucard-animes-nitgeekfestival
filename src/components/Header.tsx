@@ -169,7 +169,7 @@ const Header = () => {
             href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="btn-gradient hidden sm:inline-flex"
+            className="btn-skewed hidden sm:inline-flex items-center justify-center px-6 rounded-md h-10 font-bold text-sm uppercase"
           >
             INGRESSOS
           </a>
@@ -179,7 +179,7 @@ const Header = () => {
             href="https://www.uticket.com.br/event/01LEBL5A2365D3" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="sm:hidden btn-gradient text-sm h-9"
+            className="sm:hidden btn-skewed flex items-center justify-center px-4 rounded-md h-9 font-bold text-xs uppercase"
           >
             Ingressos
           </a>
@@ -343,7 +343,7 @@ const Header = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsMenuOpen(false)}
-                    className="mt-6 btn-gradient w-full text-center"
+                    className="mt-6 btn-skewed w-full text-center flex items-center justify-center py-4 font-bold text-base uppercase"
                   >
                     COMPRAR INGRESSOS
                   </a>
