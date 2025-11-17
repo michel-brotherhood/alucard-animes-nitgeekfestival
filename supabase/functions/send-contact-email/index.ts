@@ -8,7 +8,7 @@ const smtpClient = new SMTPClient({
     port: 465,
     tls: true,
     auth: {
-      username: "itanime@alucardanimes.com.br",
+      username: "nitgeekfestival@alucardanimes.com.br",
       password: Deno.env.get("HOSTINGER_EMAIL_PASSWORD") || "",
     },
   },
@@ -90,7 +90,7 @@ const handler = async (req: Request): Promise<Response> => {
           </div>
           <div style="background: #f7fafc; padding: 20px; text-align: center; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
             <p style="margin: 0; color: #718096; font-size: 14px;">
-              📧 Esta é uma mensagem automática do sistema de inscrições Itanime - Alucard Animes
+              📧 Esta é uma mensagem automática do sistema de inscrições NitGeek Festival - Alucard Animes
             </p>
             <p style="margin: 10px 0 0 0; color: #a0aec0; font-size: 12px;">
               Data e Hora: ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
@@ -104,7 +104,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (hostingerPassword) {
       try {
         await smtpClient.send({
-          from: "Itanime <itanime@alucardanimes.com.br>",
+          from: "NitGeek Festival <nitgeekfestival@alucardanimes.com.br>",
           to: to,
           replyTo: formData.email || undefined,
           subject: subject,
@@ -125,7 +125,7 @@ const handler = async (req: Request): Promise<Response> => {
         throw new Error("Nenhum provedor de email configurado (HOSTINGER_EMAIL_PASSWORD ou RESEND_API_KEY)");
       }
       const resendResult: any = await resend.emails.send({
-        from: "Itanime <onboarding@resend.dev>",
+        from: "NitGeek Festival <onboarding@resend.dev>",
         to: [to],
         reply_to: formData.email || undefined,
         subject: subject,
