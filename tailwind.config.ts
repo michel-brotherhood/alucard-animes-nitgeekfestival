@@ -16,6 +16,13 @@ export default {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
       },
+      backgroundSize: {
+        'size-200': '200% 200%',
+      },
+      backgroundPosition: {
+        'pos-0': '0% 50%',
+        'pos-100': '100% 50%',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
