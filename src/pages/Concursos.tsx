@@ -106,7 +106,7 @@ const Concursos = () => {
               <div>
                 <h3 className="font-bold text-accent mb-2">📅 Data e Horário:</h3>
                 <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Data: 11 de Janeiro de 2025</li>
+                  <li>Data: 18 de Janeiro de 2025</li>
                   <li>Horário: 12:00 às 18:00</li>
                   <li>Local: Niterói - RJ</li>
                 </ul>
