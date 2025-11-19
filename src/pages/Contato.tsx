@@ -89,7 +89,7 @@ const Contato = () => {
     try {
       const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'nitgeekfestival@alucardanimes.com.br',
+          to: 'nitgeek@alucardanimes.com.br',
           subject: 'Novo Contato - NitGeek Festival',
           formData: data,
           formType: 'Formulário de Contato'
