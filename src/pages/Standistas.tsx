@@ -47,7 +47,7 @@ const Standistas = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'nitgeekfestival@alucardanimes.com.br',
+          to: 'nitgeek@alucardanimes.com.br',
           subject: 'Nova Solicitação - Estande de Vendas',
           formData: values,
           formType: 'Solicitação de Estande'

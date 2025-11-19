@@ -66,7 +66,7 @@ const ConcursoCosplay = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'nitgeekfestival@alucardanimes.com.br',
+          to: 'nitgeek@alucardanimes.com.br',
           subject: 'Nova Inscrição - Concurso Cosplay',
           formData: values,
           formType: 'Concurso Cosplay'
