@@ -67,23 +67,23 @@ const GamesSection = () => {
             return (
               <Card 
                 key={index}
-                className="relative overflow-hidden group hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+                className="relative overflow-hidden group hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-80 overflow-hidden">
                   <img
                     src={game.image}
                     alt={game.title}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 bg-black"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${game.gradient} opacity-40 group-hover:opacity-30 transition-opacity`} />
-                  <div className={`absolute top-4 right-4 w-12 h-12 rounded-full bg-gradient-to-br ${game.gradient} flex items-center justify-center shadow-lg`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity`} />
+                  <div className={`absolute top-4 right-4 w-14 h-14 rounded-full bg-gradient-to-br ${game.gradient} flex items-center justify-center shadow-lg ring-2 ring-white/20`}>
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
-                </div>
-                
-                <div className="p-4 bg-card">
-                  <h3 className="text-xl font-bold text-center mb-1">{game.title}</h3>
-                  <p className="text-muted-foreground text-center text-sm">{game.category}</p>
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-2xl font-bold mb-1 drop-shadow-lg">{game.title}</h3>
+                    <p className="text-white/90 text-sm font-medium drop-shadow-md">{game.category}</p>
+                  </div>
                 </div>
               </Card>
             );
