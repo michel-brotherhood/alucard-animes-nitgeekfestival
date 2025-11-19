@@ -1,14 +1,46 @@
+# NitGeek Festival 2026 - Robots.txt
+# Website: https://nitgeek.com.br
+# Event Date: 18 de Janeiro de 2026
+
+# Permitir todos os bots principais
 User-agent: Googlebot
-Allow: /
-
+User-agent: Googlebot-Image
+User-agent: Googlebot-Mobile
 User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: YandexBot
 User-agent: facebookexternalhit
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: WhatsApp
 Allow: /
 
+# Bloquear bots indesejados
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MJ12bot
+User-agent: DotBot
+Disallow: /
+
+# Regras gerais para outros bots
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Arquivos e diretórios importantes
+Sitemap: https://nitgeek.com.br/sitemap.xml
+
+# Páginas importantes para SEO
+Allow: /ingressos
+Allow: /concursos
+Allow: /concurso-cosplay
+Allow: /concurso-kpop
+Allow: /concurso-videogames
+Allow: /concurso-animeke
+Allow: /o-evento
+Allow: /cronograma
+Allow: /line-up
+Allow: /quem-somos
+Allow: /contato
