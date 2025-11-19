@@ -2,11 +2,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Gamepad2, Swords, Music, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
-import mortalKombat from "@/assets/mortal-kombat-1.png";
-import streetFighter from "@/assets/street-fighter-6.png";
-import tekken8 from "@/assets/tekken-8.png";
-import justDance from "@/assets/just-dance.jpg";
-import fifa2025 from "@/assets/fifa-2025.jpg";
+import mortalKombat from "@/assets/mortal-kombat-1-banner.webp";
+import streetFighter from "@/assets/street-fighter-6-banner.webp";
+import tekken8 from "@/assets/tekken-8-banner.webp";
+import justDance from "@/assets/just-dance-banner.webp";
+import fifa2025 from "@/assets/fifa-2025-banner.webp";
 
 const GamesSection = () => {
   const games = [
