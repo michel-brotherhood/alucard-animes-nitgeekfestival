@@ -99,17 +99,17 @@ const ConcursoVideogames = () => {
             <h2 className="text-3xl font-bold text-center mb-8">Jogos Disponíveis</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {jogos.map((jogo, index) => (
-                <Card key={index} className="overflow-hidden group hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <Card key={index} className="overflow-hidden group hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0">
                   <div className="relative h-80 overflow-hidden">
                     <img
                       src={jogo.image}
                       alt={jogo.title}
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 bg-black"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-white text-xl font-bold mb-1">{jogo.title}</h3>
-                      <p className="text-white/80 text-sm">{jogo.categoria}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-white text-2xl font-bold mb-1 drop-shadow-lg">{jogo.title}</h3>
+                      <p className="text-white/90 text-sm font-medium drop-shadow-md">{jogo.categoria}</p>
                     </div>
                   </div>
                 </Card>
