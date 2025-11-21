@@ -12,7 +12,7 @@ const Hero = () => {
             
             {/* Left Content */}
             <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
-              <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.3] tracking-tight">
+              <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-foreground leading-[1.5] tracking-normal">
                 A maior experiência{" "}
                 <span className="text-secondary">geek</span>{" "}
                 de Niterói{" "}
