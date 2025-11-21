@@ -53,7 +53,7 @@ const ConcursoKpop = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'nitgeek@alucardanimes.com.br',
+          to: 'nitgeekfestival@alucardanimes.com.br',
           subject: 'Nova Inscrição - Campeonato K-Pop',
           formData: values,
           formType: 'Campeonato K-Pop'
@@ -447,12 +447,12 @@ const ConcursoKpop = () => {
                   <div className="text-center bg-white/5 rounded-lg p-4 md:p-6">
                     <p className="text-white/90 text-sm md:text-base">
                       Dúvidas? {" "}
-                      <a 
-                        href="mailto:nitgeek@alucardanimes.com.br?subject=Dúvida%20-%20Campeonato%20K-Pop"
-                        className="text-accent hover:text-accent/80 underline font-semibold transition-colors"
-                      >
-                        Fale com a equipe Alucard
-                      </a>
+                    <a 
+                      href="mailto:nitgeekfestival@alucardanimes.com.br?subject=Dúvida%20-%20Campeonato%20K-Pop"
+                      className="text-accent hover:text-accent/80 underline font-semibold transition-colors"
+                    >
+                      Fale com a equipe Alucard
+                    </a>
                     </p>
                   </div>
                 </form>
