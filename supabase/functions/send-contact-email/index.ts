@@ -8,7 +8,7 @@ const smtpClient = new SMTPClient({
     port: 465,
     tls: true,
     auth: {
-      username: "nitgeek@alucardanimes.com.br",
+      username: "nitgeekfestival@alucardanimes.com.br",
       password: Deno.env.get("HOSTINGER_EMAIL_PASSWORD") || "",
     },
   },
@@ -104,7 +104,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (hostingerPassword) {
       try {
         await smtpClient.send({
-          from: "NitGeek Festival <nitgeek@alucardanimes.com.br>",
+          from: "NitGeek Festival <nitgeekfestival@alucardanimes.com.br>",
           to: to,
           replyTo: formData.email || undefined,
           subject: subject,

@@ -221,7 +221,7 @@ const Ajuda = () => {
                   Falar no WhatsApp - (21) 97749-8015
                 </a>
                 <p className="text-sm text-foreground/60 mt-3">
-                  Ou envie um e-mail: <a href="mailto:nitgeek@alucardanimes.com.br" className="text-primary hover:underline">nitgeek@alucardanimes.com.br</a>
+                  Ou envie um e-mail: <a href="mailto:nitgeekfestival@alucardanimes.com.br" className="text-primary hover:underline">nitgeekfestival@alucardanimes.com.br</a>
                 </p>
               </div>
             </div>
